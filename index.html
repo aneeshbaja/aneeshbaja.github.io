@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CADpanion - AI CAD Learning Assistant</title>
+    <link rel="stylesheet" href="campanion-coming-soon.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Top Navigation -->
+    <nav class="top-nav">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="campanion-coming-soon.html" style="text-decoration:none;color:inherit;display:flex;align-items:center;gap:0.5rem;">
+                    <img src="assets/campanion-logo.png" alt="Campanion Logo" class="campanion-logo-img" />
+                    <h2>Campanion</h2>
+                </a>
+            </div>
+            <div style="display: flex; gap: 1rem; margin-left: auto;">
+                <button class="nav-demo-btn" onclick="openDemoModal()">
+                    <i class="fas fa-calendar-alt"></i>
+                    Book Demo
+                </button>
+                <button class="nav-demo-btn" onclick="window.location.href='index.html'">
+                    <i class="fas fa-rocket"></i>
+                    Try Me
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="logo" style="text-align:center;margin:8rem 0 2rem 0;">
+        <h1 style="font-size:2.7rem;">CADpanion</h1>
+        <div class="coming-soon">
+            <h2 class="coming-soon-animated">Coming Soon</h2>
+        </div>
+    </div>
+    <div class="about-section" style="margin-bottom:2.5rem;text-align:center;max-width:800px;margin-left:auto;margin-right:auto;">
+        <h3 style="font-size:1.3rem;font-weight:500;">AI-Powered Learning Assistant for CAD/CAM</h3>
+        <p style="margin-top:1.2rem;max-width:520px;margin-left:auto;margin-right:auto;line-height:2;">CADpanion is an AI-powered learning assistant built for CAD/CAM environments. Instead of just doing the work, it teaches users by explaining design concepts, guiding through complex features, and answering questions—helping students and professionals truly understand the tools they use, directly within their CAD software.</p>
+    </div>
+    
+    <!-- Demo Video Section -->
+    <div class="demo-video-section" style="margin:3rem 0;text-align:center;">
+        <h3 style="font-size:1.2rem;font-weight:700;margin-bottom:1.5rem;color:#fff;">See CADpanion in Action</h3>
+        <div class="video-container" style="max-width:800px;margin:0 auto;">
+            <video width="100%" height="400" autoplay muted loop style="border-radius:8px;box-shadow:0 0 20px rgba(255,255,255,0.6), 0 0 40px rgba(255,255,255,0.4), 0 0 60px rgba(255,255,255,0.2), 0 8px 32px rgba(0,0,0,0.3);">
+                <source src="assets/cad-panion-demo.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+    
+    <!-- How We're Different Section -->
+    <div class="how-were-different-section" style="margin:6rem 0;text-align:center;max-width:600px;margin-left:auto;margin-right:auto;">
+        <h3 style="font-size:2rem;font-weight:700;margin-bottom:2rem;color:#fff;">How We're Different</h3>
+        <p style="line-height:2.5;color:rgba(255,255,255,0.9);margin-bottom:1.5rem;">CADpanion isn't just a task automation tool—it's a contextual learning assistant built specifically for CAD/CAM users. While most tools focus on doing the work for you, CADpanion focuses on teaching by offering real-time, step-by-step guidance based on your design activity. It uses fine-tuned large language models and integrates directly into your CAD environment, providing explanations of features, design principles, and tool interactions as you work.</p>
+        <p style="line-height:2.5;color:rgba(255,255,255,0.9);">By interpreting user intent and offering targeted, in-context help, CADpanion bridges the gap between documentation and hands-on learning. It's especially useful for students, educators, and early-career engineers who want to build lasting design intuition—not just finish a task. Our system is modular, adaptable to different CAD platforms, and designed to align with real-world engineering workflows.</p>
+    </div>
+    
+    <div class="cta-section" style="margin-top:2.5rem;flex-direction:row;gap:1.5rem;text-align:center;justify-content:center;position:relative;z-index:10;">
+        <button class="book-demo-btn" style="min-width:160px;text-align:center;border:none;cursor:pointer;position:relative;z-index:10;text-decoration:none;" onclick="openWaitlistModal();">
+            <i class="fas fa-user-plus"></i>
+            Join Waitlist
+        </button>
+        <a href="campanion-coming-soon.html" class="book-demo-btn" style="min-width:160px;text-align:center;text-decoration:none;position:relative;z-index:10;">
+            <i class="fas fa-arrow-right"></i>
+            Explore More
+        </a>
+    </div>
+
+    <!-- Demo Modal -->
+    <div id="demoModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeDemoModal()">&times;</span>
+            <h2>Book Your Demo</h2>
+            <p>Be the first to experience Campanion. Enter your details below.</p>
+            
+            <form class="demo-form" action="https://script.google.com/macros/s/AKfycbyyv_K3Bc8WjH5cjzY5plczDvuOZIjJ2POti3DARhekRKDcdJ4C-wyy5zMhedBZNvsBcA/exec" method="POST" onsubmit="submitDemoForm(event)">
+                <div class="form-group">
+                    <input type="text" id="name" name="name" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="email" name="email" placeholder="Your Email" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" id="company" name="company" placeholder="School/Institution (Optional)">
+                </div>
+                <div class="form-group">
+                    <textarea id="message" name="message" placeholder="Tell us about your teaching needs (Optional)" rows="3"></textarea>
+                </div>
+                <button type="submit" class="submit-btn">
+                    <span class="btn-text">Book Demo</span>
+                    <span class="btn-loading" style="display: none;">
+                        <i class="fas fa-spinner fa-spin"></i> Sending...
+                    </span>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2025 Campanion Labs, Corp. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Waitlist Modal -->
+    <div id="waitlistModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeWaitlistModal()">&times;</span>
+            <h2>Join the Waitlist</h2>
+            <p>Be the first to know when Cad-Panion launches!</p>
+            <form class="demo-form" id="waitlistForm" action="https://script.google.com/macros/s/AKfycbx2bYMLsd0ZbLWM25uVG9AtM1zfQWdhH_Pvpn_6r5IWGGYon14MFTpQt5Yf8VZXSmWc/exec" method="POST" onsubmit="submitWaitlistForm(event)">
+                <div class="form-group">
+                    <input type="text" id="waitlist-name" name="name" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="waitlist-email" name="email" placeholder="Your Email" required>
+                </div>
+                <button type="submit" class="submit-btn">
+                    <span class="btn-text">Join Waitlist</span>
+                    <span class="btn-loading" style="display: none;">
+                        <i class="fas fa-spinner fa-spin"></i> Sending...
+                    </span>
+                </button>
+            </form>
+        </div>
+    </div>
+    <script>
+    // Modal logic for waitlist
+    const waitlistBtn = document.querySelector('.join-waitlist-btn');
+    const waitlistModal = document.getElementById('waitlistModal');
+    const closeWaitlist = document.querySelector('#waitlistModal .close');
+    if (waitlistBtn && waitlistModal && closeWaitlist) {
+        waitlistBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            waitlistModal.style.display = 'block';
+        });
+        closeWaitlist.addEventListener('click', function() {
+            waitlistModal.style.display = 'none';
+        });
+        window.onclick = function(event) {
+            if (event.target === waitlistModal) {
+                waitlistModal.style.display = 'none';
+            }
+        };
+    }
+    
+    // Demo modal functions
+    function openDemoModal() {
+        document.getElementById('demoModal').style.display = 'block';
+    }
+    
+    function closeDemoModal() {
+        document.getElementById('demoModal').style.display = 'none';
+    }
+    
+    function openWaitlistModal() {
+        document.getElementById('waitlistModal').style.display = 'block';
+    }
+    
+    function closeWaitlistModal() {
+        document.getElementById('waitlistModal').style.display = 'none';
+    }
+    
+    function submitDemoForm(event) {
+        event.preventDefault();
+        const form = event.target;
+        const btnText = form.querySelector('.btn-text');
+        const btnLoading = form.querySelector('.btn-loading');
+        
+        btnText.style.display = 'none';
+        btnLoading.style.display = 'inline-flex';
+        
+        fetch(form.action, {
+            method: 'POST',
+            body: new FormData(form),
+            mode: 'no-cors'
+        }).then(() => {
+            btnLoading.style.display = 'none';
+            btnText.style.display = 'inline';
+            form.reset();
+            closeDemoModal();
+            alert('Thank you! We\'ll be in touch soon to schedule your demo.');
+        }).catch(() => {
+            btnLoading.style.display = 'none';
+            btnText.style.display = 'inline';
+            alert('There was an error. Please try again.');
+        });
+    }
+    
+    function submitWaitlistForm(event) {
+        event.preventDefault();
+        const form = document.getElementById('waitlistForm');
+        const btnText = form.querySelector('.btn-text');
+        const btnLoading = form.querySelector('.btn-loading');
+        btnText.style.display = 'none';
+        btnLoading.style.display = 'inline-flex';
+        fetch(form.action, {
+            method: 'POST',
+            body: new FormData(form),
+            mode: 'no-cors'
+        }).then(() => {
+            btnLoading.style.display = 'none';
+            btnText.style.display = 'inline';
+            form.reset();
+            waitlistModal.style.display = 'none';
+            alert('Thank you for joining the waitlist!');
+        }).catch(() => {
+            btnLoading.style.display = 'none';
+            btnText.style.display = 'inline';
+            alert('There was an error. Please try again.');
+        });
+    }
+    </script>
+</body>
+</html> 
