@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campanion - The Complete Suite of Teacher Tools</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="shortcut icon" type="image/png" href="logo.png">
+</head>
+<body>
+    <!-- Shooting Stars Background -->
+    <div class="shooting-stars">
+        <div class="stars"></div>
+        <div class="twinkling"></div>
+    </div>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <a href="#" class="logo">Campanion</a>
+                <a href="#signup" class="btn btn-primary">Get Started</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Teaching <span class="gradient-text">Simplified</span></h1>
+                <p class="subtitle">Automate grading, analyze student performance, and generate personalized feedback instantly.</p>
+                
+                <form class="cta-form" id="signup-form">
+                    <input type="text" id="name" name="name" placeholder="Your name" class="name-input" required>
+                    <input type="email" id="email" name="email" placeholder="Your email" class="email-input" required>
+                    <button type="submit" class="btn btn-primary btn-large">Sign up for the waitlist</button>
+                    <p id="formResponse" class="form-response"></p>
+                </form>
+                
+                <script>
+                document.getElementById('signup-form').addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    const scriptURL = 'https://script.google.com/macros/s/AKfycbyuO1WfDwctFiRmn33_r_kooFQZ67X-ytJ4dpmp0BPoJ0SA3rCOsXtOIYuKtlpbX-fvRg/exec';
+                    const form = document.getElementById('signup-form');
+                    const responseMsg = document.getElementById('formResponse');
+                    const formData = new FormData(form);
+                    
+                    // Show loading state
+                    responseMsg.textContent = 'Submitting...';
+                    responseMsg.className = 'form-response';
+                    
+                    // Create unique callback name
+                    const callbackName = 'jsonp_callback_' + Math.round(100000 * Math.random());
+                    
+                    // Build URL with form data
+                    const params = new URLSearchParams();
+                    formData.forEach((value, key) => {
+                        params.append(key, value);
+                    });
+                    params.append('callback', callbackName);
+                    
+                    // Set up callback function
+                    window[callbackName] = function(response) {
+                        // Clean up
+                        delete window[callbackName];
+                        if (document.body.contains(script)) {
+                            document.body.removeChild(script);
+                        }
+                        
+                        if (response && response.result === 'success') {
+                            responseMsg.textContent = 'Thank you! Your information has been submitted.';
+                            responseMsg.className = 'form-response success';
+                            form.reset();
+                        } else {
+                            const errorMsg = response && response.error ? response.error : 'Submission failed. Please try again.';
+                            responseMsg.textContent = errorMsg;
+                            responseMsg.className = 'form-response error';
+                        }
+                    };
+                    
+                    // Create and execute script
+                    const script = document.createElement('script');
+                    script.src = `${scriptURL}?${params.toString()}`;
+                    
+                    script.onerror = function() {
+                        delete window[callbackName];
+                        if (document.body.contains(script)) {
+                            document.body.removeChild(script);
+                        }
+                        responseMsg.textContent = 'Network error. Please check your connection and try again.';
+                        responseMsg.className = 'form-response error';
+                    };
+                    
+                    document.body.appendChild(script);
+                    
+                    // Timeout fallback
+                    setTimeout(() => {
+                        if (window[callbackName]) {
+                            delete window[callbackName];
+                            if (document.body.contains(script)) {
+                                document.body.removeChild(script);
+                            }
+                            responseMsg.textContent = 'Request timed out. Please try again.';
+                            responseMsg.className = 'form-response error';
+                        }
+                    }, 10000);
+                });
+                </script>
+                
+                <!-- Navbar Hide on Scroll Script -->
+                <script>
+                let lastScrollTop = 0;
+                const header = document.querySelector('.header');
+                
+                window.addEventListener('scroll', function() {
+                    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                    
+                    if (scrollTop > lastScrollTop && scrollTop > 100) {
+                        // Scrolling down & past 100px
+                        header.classList.add('hide');
+                    } else {
+                        // Scrolling up
+                        header.classList.remove('hide');
+                    }
+                    
+                    // Add scrolled class for styling
+                    if (scrollTop > 50) {
+                        header.classList.add('scrolled');
+                    } else {
+                        header.classList.remove('scrolled');
+                    }
+                    
+                    lastScrollTop = scrollTop;
+                });
+                </script>
+                
+                <div class="trusted-by">
+                    <span>Trusted by Educators Worldwide</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="hero-overlay"></div>
+        <div class="grid-pattern"></div>
+    </section>
+
+    <!-- Demo Video Section -->
+    <section class="demo-section">
+        <div class="container">
+            <div class="demo-content">
+                <div class="section-header">
+                    <h2>See Campanion in Action</h2>
+                    <p class="section-subtitle">Watch how Campanion transforms your teaching workflow in just minutes</p>
+                </div>
+                
+                <div class="video-container">
+                    <video class="demo-video" controls poster="logo.png">
+                        <source src="demo.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="video-overlay">
+                        <div class="play-button">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-header">
+                <h2>Everything You Need in One Place</h2>
+                <p class="section-subtitle">Campanion combines powerful tools to streamline your teaching workflow</p>
+            </div>
+            
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-file-upload"></i>
+                    </div>
+                    <h3>OCR Assignment & Assessment Autograding</h3>
+                    <p>Save time with our advanced OCR technology that automatically grades assignments and assessments, providing instant feedback to students.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <h3>Student Performance & Data Analytics</h3>
+                    <p>Gain deep insights into student performance with comprehensive analytics and visual reports to track progress and identify areas for improvement.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-question-circle"></i>
+                    </div>
+                    <h3>Practice Questions/Assignments Generation</h3>
+                    <p>Automatically generate customized practice questions and assignments tailored to your curriculum and students' learning levels.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h3>Automation of Parent/Guardian Communication</h3>
+                    <p>Streamline communication with automated updates and reports to keep parents and guardians informed about their child's progress.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-tasks"></i>
+                    </div>
+                    <h3>Personalized Lesson Plan Generation</h3>
+                    <p>Create customized lesson plans based on your teaching style, curriculum requirements, and students' learning needs.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <h3>Personalized Student Reports</h3>
+                    <p>Generate detailed, individualized reports that highlight each student's progress, strengths, and areas for improvement.</p>
+                </div>
+            </div>
+
+            <!-- Demo Video Section -->
+            <div class="demo-video">
+                <h2>See Campanion in Action</h2>
+                <div class="video-container">
+                    <div class="video-placeholder">
+                        <i class="fas fa-play-circle"></i>
+                        <p>Watch our product demo</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
