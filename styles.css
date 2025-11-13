@@ -476,15 +476,46 @@ img {
 
 /* Base mobile styles */
 @media (max-width: 992px) {
-    /* Reset all font sizes and spacing */
-    html {
-        font-size: 14px;
+    /* Reset and force vertical stacking */
+    * {
+        box-sizing: border-box;
+        max-width: 100%;
     }
     
-    /* Layout adjustments */
-    .container {
-        padding: 0 10px;
+    html, body {
+        overflow-x: hidden;
+        width: 100%;
+        margin: 0;
+        padding: 0;
     }
+    
+    /* Stack all sections */
+    .container, section, .hero, .features, .hero-video {
+        display: block !important;
+        width: 100% !important;
+        float: none !important;
+        padding: 15px 10px !important;
+        margin: 0 !important;
+        clear: both;
+    }
+    
+    /* Stack all content */
+    .hero-content, .features-grid, .cta-buttons, .feature, .card {
+        display: block !important;
+        width: 100% !important;
+        margin: 10px 0 !important;
+        padding: 0 !important;
+    }
+    
+    /* Typography */
+    html { font-size: 14px; }
+    h1 { font-size: 1.8rem !important; }
+    h2 { font-size: 1.5rem !important; }
+    p, li, a, .btn { font-size: 0.9rem !important; }
+    
+    /* Remove any horizontal margins/padding */
+    .container { padding: 0 10px !important; }
+    section { padding: 15px 10px !important; }
     
     /* Header */
     .header {
