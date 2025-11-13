@@ -30,6 +30,13 @@
     border: 1px solid rgba(239, 68, 68, 0.2);
 }
 
+/* Responsive Base */
+html {
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+    scroll-behavior: smooth;
+}
+
 /* Base Styles */
 :root {
     /* Colors */
@@ -462,6 +469,36 @@ img {
 }
 
 /* Responsive adjustments */
+@media (max-width: 992px) {
+    .hero {
+        padding: 80px 0 40px;
+    }
+    
+    .hero-content {
+        padding: 0 20px;
+    }
+    
+    .hero h1 {
+        font-size: 2.2rem;
+        line-height: 1.2;
+    }
+    
+    .hero p {
+        font-size: 1.1rem;
+        max-width: 100%;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    .btn {
+        width: 100%;
+        text-align: center;
+    }
+}
+
 @media (max-width: 768px) {
     .hero {
         padding: 60px 0 80px;
@@ -657,7 +694,7 @@ img {
 }
 
 .logo-img {
-    height: 32px;  
+    height: 28px;
     width: auto;
     display: block;
     object-fit: contain;
