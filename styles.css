@@ -490,7 +490,72 @@ img {
     }
     
     .mobile-menu-btn {
-        display: flex; /* Show mobile menu button */
+        display: none; /* Hide mobile menu button */
+    }
+    
+    /* Hero section adjustments */
+    .hero {
+        padding: 80px 5% 60px;
+        min-height: auto;
+    }
+    
+    .hero h1 {
+        font-size: 2.5rem;
+        line-height: 1.2;
+        margin-bottom: 1rem;
+    }
+    
+    .hero .subtitle {
+        font-size: 1.1rem;
+        margin-bottom: 2rem;
+    }
+    
+    .hero-content {
+        flex-direction: column;
+        margin-bottom: 40px;
+    }
+    
+    /* Features section */
+    .features {
+        padding: 40px 5%;
+    }
+    
+    .features-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    /* Video section */
+    .hero-video {
+        margin-top: 30px;
+        padding: 0 5%;
+    }
+    
+    .video-container {
+        margin: 20px 0;
+    }
+    
+    /* Cards */
+    .card {
+        width: 100%;
+        max-width: 100%;
+        margin: 0 0 20px 0;
+    }
+    
+    .floating-cards {
+        height: auto;
+        perspective: none;
+    }
+    
+    /* Buttons */
+    .cta-buttons {
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    .btn {
+        width: 100%;
+        text-align: center;
     }
     
     /* Hero section */
