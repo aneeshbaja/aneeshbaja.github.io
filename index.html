@@ -33,10 +33,31 @@
         <div class="container">
             <nav class="nav">
                 <a href="#" class="logo">
-    <img src="logo.png" alt="Campanion Logo" class="logo-img">
-    <span>Campanion</span>
-</a>
+                    <img src="logo.png" alt="Campanion Logo" class="logo-img">
+                    <span>Campanion</span>
+                </a>
+                
+                <!-- Desktop Navigation -->
+                <div class="nav-links">
+                    <a href="#features">Features</a>
+                    <a href="#demo">Demo</a>
+                    <a href="#contact">Contact</a>
+                    <a href="#login" class="btn btn-outline">Log In</a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button class="mobile-menu-btn" aria-label="Toggle menu">
+                    <i class="fas fa-bars"></i>
+                </button>
             </nav>
+            
+            <!-- Mobile Navigation -->
+            <div class="mobile-nav" id="mobileNav">
+                <a href="#features">Features</a>
+                <a href="#demo">Demo</a>
+                <a href="#contact">Contact</a>
+                <a href="#login" class="btn btn-outline">Log In</a>
+            </div>
         </div>
     </header>
 
@@ -114,52 +135,120 @@
     </section>
 
     <script>
-        // Mobile Menu Toggle
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const mobileNav = document.getElementById('mobile-nav');
-        const header = document.querySelector('.header');
-        
-        function toggleMobileMenu() {
-            mobileNav.classList.toggle('active');
-            const icon = mobileMenuBtn.querySelector('i');
-            if (mobileNav.classList.contains('active')) {
-                icon.classList.remove('fa-bars');
-                icon.classList.add('fa-times');
-            } else {
-                icon.classList.remove('fa-times');
-                icon.classList.add('fa-bars');
-            }
-        }
-        
-        function closeMobileMenu() {
-            mobileNav.classList.remove('active');
-            const icon = mobileMenuBtn.querySelector('i');
-            icon.classList.remove('fa-times');
-            icon.classList.add('fa-bars');
-        }
-        
-        mobileMenuBtn.addEventListener('click', toggleMobileMenu);
-        
-        // Close mobile menu when clicking outside
-        mobileNav.addEventListener('click', function(e) {
-            if (e.target === mobileNav) {
-                closeMobileMenu();
-            }
-        });
-        
-        // Navbar scroll behavior
-        let lastScrollTop = 0;
-        let scrollTimeout;
-        
-        window.addEventListener('scroll', function() {
-            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            const mobileNav = document.getElementById('mobileNav');
+            const header = document.querySelector('.header');
             
-            // Add scrolled class for styling
-            if (scrollTop > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
+            // Toggle mobile menu
+            function toggleMobileMenu() {
+                if (!mobileNav || !mobileMenuBtn) return;
+                
+                mobileNav.classList.toggle('active');
+                document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
+                
+                const icon = mobileMenuBtn.querySelector('i');
+                if (mobileNav.classList.contains('active')) {
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-times');
+                    if (header) header.classList.add('menu-open');
+                } else {
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                    if (header) header.classList.remove('menu-open');
+                }
             }
+            
+            // Close mobile menu
+            function closeMobileMenu() {
+                if (!mobileNav || !mobileMenuBtn) return;
+                
+                mobileNav.classList.remove('active');
+                document.body.style.overflow = '';
+                
+                const icon = mobileMenuBtn.querySelector('i');
+                if (icon) {
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
+                
+                if (header) header.classList.remove('menu-open');
+            }
+            
+            // Add event listeners if elements exist
+            if (mobileMenuBtn) {
+                mobileMenuBtn.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    toggleMobileMenu();
+                });
+            }
+            
+            if (mobileNav) {
+                // Close menu when clicking on a link
+                const navLinks = mobileNav.querySelectorAll('a');
+                navLinks.forEach(link => {
+                    link.addEventListener('click', closeMobileMenu);
+                });
+                
+                // Close menu when clicking outside
+                document.addEventListener('click', function(e) {
+                    if (!mobileNav.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+                        closeMobileMenu();
+                    }
+                });
+            }
+            
+            // Header scroll effect
+            if (header) {
+                let lastScrollTop = 0;
+                
+                window.addEventListener('scroll', function() {
+                    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                    
+                    // Add/remove scrolled class based on scroll position
+                    if (scrollTop > 50) {
+                        header.classList.add('scrolled');
+                    } else {
+                        header.classList.remove('scrolled');
+                    }
+                    
+                    // Hide/show header on scroll
+                    if (scrollTop > 100) {
+                        if (scrollTop > lastScrollTop) {
+                            // Scrolling down
+                            header.classList.add('hide');
+                        } else {
+                            // Scrolling up
+                            header.classList.remove('hide');
+                        }
+                    }
+                    
+                    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+                });
+            }
+            
+            // Handle window resize
+            function handleResize() {
+                if (window.innerWidth > 992) {
+                    closeMobileMenu();
+                }
+            }
+            
+            window.addEventListener('resize', handleResize);
+            
+            // Initialize
+            if (window.innerWidth <= 992) {
+                document.body.classList.add('mobile-view');
+            }
+            
+            window.addEventListener('resize', function() {
+                if (window.innerWidth > 992) {
+                    document.body.classList.remove('mobile-view');
+                    closeMobileMenu();
+                } else {
+                    document.body.classList.add('mobile-view');
+                }
+            });
             
             // Hide/show navbar on scroll
             if (scrollTop > 100) {
