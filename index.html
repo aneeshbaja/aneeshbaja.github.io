@@ -16,7 +16,7 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/png" href="logo.png">
@@ -33,6 +33,7 @@
     <!-- Shooting Stars Background -->
     <div class="shooting-stars">
         <div class="stars"></div>
+        <div class="grid-overlay" aria-hidden="true"></div>
     </div>
 
     <!-- Header -->
@@ -43,6 +44,7 @@
                     <img src="logo.png" alt="Campanion Logo" class="logo-img">
                     <span>Campanion</span>
                 </a>
+                <a href="https://buy.stripe.com/28E28j9zv16h80S5nZ48002" target="_blank" rel="noopener noreferrer" class="nav-cta nav-cta-buy">Buy Now</a>
             </nav>
         </div>
     </header>
@@ -54,7 +56,16 @@
                 <div class="hero-text">
                     <h1>Teaching <span class="gradient-text">Simplified</span></h1>
                     <p class="subtitle">Streamlines classroom management by automating grading, feedback, and progress tracking using AI and Handwriting Detection (OCR). Transform your student's work into insights through an intuitive dashboard that integrates seamlessly with existing learning systems.</p>
-                    
+                    <div class="cta-buttons">
+                        <a href="https://calendar.app.google/NwZQP1b482syC5E3A" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Book Demo</a>
+                        <a href="sms:+18133147067" class="btn btn-secondary">Text Us! 813-314-7067</a>
+                    </div>
+                    <div class="hero-interactive" aria-hidden="true">
+                        <div class="hero-orb hero-orb-1"></div>
+                        <div class="hero-orb hero-orb-2"></div>
+                        <div class="hero-orb hero-orb-3"></div>
+                        <div class="hero-orb hero-orb-4"></div>
+                    </div>
                     <div class="features-row">
                         <div class="card">
                             <div class="card-icon">
@@ -91,11 +102,17 @@
                             <h3>Smart Grading</h3>
                             <p>Automated grading for any curriculum with instant results</p>
                         </div>
-                    </div>
-                    
-                    <div class="cta-buttons">
-                        <a href="https://calendar.app.google/NwZQP1b482syC5E3A" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Book Demo</a>
-                        <a href="sms:+18133147067" class="btn btn-primary">Text Us! 813-314-7067</a>
+
+                        <div class="card">
+                            <div class="card-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                                    <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+                                </svg>
+                            </div>
+                            <h3>LMS Integration</h3>
+                            <p>Connects with Canvas, Google Classroom, and other learning platforms</p>
+                        </div>
                     </div>
                     
                     <div class="ferpa-badge">
@@ -115,15 +132,9 @@
 
             
             </div>
-
-            <!-- Video Section -->
-            
         </div>
     </section>
 
-    <script src="main.js"></script>
-</body>
-</html>
     <script src="main.js"></script>
 </body>
 </html>
