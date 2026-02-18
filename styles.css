@@ -896,27 +896,122 @@ h1 .gradient-text {
     }
 }
 
-/* Hero Video Section */
-.hero-video {
-    margin-top: 4rem;
+/* Demo Video Section – full-width */
+.demo-video-section {
+    width: 100%;
+    padding: 0 0 5rem;
     text-align: center;
     position: relative;
     z-index: 2;
-    padding: 0 0 4rem;
-    scroll-margin-top: 20px;
+    background: linear-gradient(180deg, #141422 0%, #0a0a14 100%);
 }
 
-.hero-video .section-title {
-    font-size: 2rem;
-    color: #fff;
+/* Animated CTA above video */
+.demo-cta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
     margin-bottom: 2rem;
-    font-weight: 600;
-    background: linear-gradient(90deg, #fff, #e2e8f0);
+    padding-top: 1rem;
+}
+
+.demo-cta-text {
+    font-family: var(--font-display);
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    background: linear-gradient(120deg, #FF6B5A 0%, #9C4DFF 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
+.demo-arrow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    animation: bounce-arrow 1.5s ease-in-out infinite;
+    color: #FF6B5A;
+    opacity: 0.85;
+}
+
+.demo-arrow svg:last-child {
+    opacity: 0.45;
+    margin-top: -8px;
+}
+
+@keyframes bounce-arrow {
+    0%, 100% { transform: translateY(0); }
+    50%       { transform: translateY(9px); }
+}
+
+/* Large video wrapper */
+.demo-video-wrapper {
+    width: 88vw;
+    max-width: 1440px;
+    margin: 0 auto;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    box-shadow:
+        0 0 0 1px rgba(255, 255, 255, 0.03) inset,
+        0 30px 80px rgba(0, 0, 0, 0.65),
+        0 0 80px rgba(156, 77, 255, 0.07);
+    transition: box-shadow 0.4s ease, border-color 0.4s ease;
+}
+
+.demo-video-wrapper:hover {
+    border-color: rgba(255, 255, 255, 0.14);
+    box-shadow:
+        0 0 0 1px rgba(255, 255, 255, 0.05) inset,
+        0 35px 90px rgba(0, 0, 0, 0.7),
+        0 0 100px rgba(156, 77, 255, 0.12);
+}
+
+.demo-video-wrapper iframe {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    display: block;
+    border: none;
+}
+
+/* Mobile – video nearly full-width */
+@media (max-width: 768px) {
+    .demo-video-section {
+        padding: 0 0 3.5rem;
+    }
+
+    .demo-video-wrapper {
+        width: 95vw;
+        border-radius: 12px;
+    }
+
+    .demo-cta-text {
+        font-size: 0.78rem;
+    }
+
+    .demo-arrow svg {
+        width: 22px;
+        height: 22px;
+    }
+
+    .demo-arrow svg:last-child {
+        width: 17px;
+        height: 17px;
+    }
+}
+
+@media (max-width: 480px) {
+    .demo-video-wrapper {
+        width: 98vw;
+        border-radius: 8px;
+    }
+}
+
+/* Legacy – kept for any other uses */
 .video-container {
     position: relative;
     width: 100%;
@@ -924,35 +1019,14 @@ h1 .gradient-text {
     margin: 0 auto;
     border-radius: 20px;
     overflow: hidden;
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.06) inset;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.video-container:hover {
-    transform: scale(1.01);
-    box-shadow: 0 30px 60px -10px rgba(0, 0, 0, 0.6), 0 0 50px rgba(156, 77, 255, 0.06);
-    border-color: rgba(255, 255, 255, 0.12);
 }
 
 .video-container video {
     width: 100%;
     height: auto;
     display: block;
-    border-radius: 12px;
-}
-
-/* YouTube iframe – responsive 16:9 */
-.youtube-container {
-    padding: 0;
-    background: #000;
-}
-
-.youtube-container iframe {
-    width: 100%;
-    aspect-ratio: 16 / 9;
-    display: block;
-    border: none;
     border-radius: 12px;
 }
 
@@ -1138,19 +1212,6 @@ h1 .gradient-text {
         width: 180px;
     }
 
-    .hero-video {
-        margin-top: 20px;
-    }
-
-    .hero-video .section-title {
-        font-size: 1.5rem;
-        margin-bottom: 1.5rem;
-    }
-
-    .video-container {
-        border-radius: 12px;
-        margin: 20px auto 0;
-    }
 }
 
 @media (max-width: 480px) {
@@ -1247,14 +1308,6 @@ h1 .gradient-text {
         top: 280px;
     }
 
-    .hero-video {
-        margin-top: 15px;
-    }
-
-    .hero-video .section-title {
-        font-size: 1.3rem;
-        margin-bottom: 1rem;
-    }
 }
 
 /* Bounce Animation */
