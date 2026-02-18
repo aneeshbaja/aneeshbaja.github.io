@@ -942,6 +942,20 @@ h1 .gradient-text {
     border-radius: 12px;
 }
 
+/* YouTube iframe – responsive 16:9 */
+.youtube-container {
+    padding: 0;
+    background: #000;
+}
+
+.youtube-container iframe {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    display: block;
+    border: none;
+    border-radius: 12px;
+}
+
 /* Mobile Responsiveness */
 @media (max-width: 1024px) {
     .hero-content {
@@ -1011,11 +1025,20 @@ h1 .gradient-text {
     }
 
     .header {
-        top: 44px;
+        position: relative;
+        top: auto;
+        padding: 16px 0;
+        background: rgba(10, 8, 18, 0.95);
+        backdrop-filter: blur(12px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .header.scrolled {
+        padding: 16px 0;
     }
 
     .hero {
-        padding: 218px 16px 40px;
+        padding: 24px 16px 40px;
         min-height: auto;
     }
 
@@ -1144,11 +1167,13 @@ h1 .gradient-text {
     }
 
     .header {
-        top: 40px;
+        position: relative;
+        top: auto;
+        padding: 14px 0;
     }
 
     .hero {
-        padding: 198px 12px 30px;
+        padding: 20px 12px 30px;
     }
 
     .hero h1 {
