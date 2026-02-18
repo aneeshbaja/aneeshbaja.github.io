@@ -899,8 +899,10 @@ h1 .gradient-text {
 /* Demo Video Section – full-width */
 .demo-video-section {
     width: 100%;
-    padding: 0 0 5rem;
-    text-align: center;
+    padding: 2rem 0 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     position: relative;
     z-index: 2;
     background: linear-gradient(180deg, #141422 0%, #0a0a14 100%);
@@ -950,9 +952,8 @@ h1 .gradient-text {
 
 /* Large video wrapper */
 .demo-video-wrapper {
-    width: 88vw;
-    max-width: 1440px;
-    margin: 0 auto;
+    width: 90%;
+    max-width: 1400px;
     border-radius: 20px;
     overflow: hidden;
     border: 1px solid rgba(255, 255, 255, 0.09);
@@ -981,11 +982,11 @@ h1 .gradient-text {
 /* Mobile – video nearly full-width */
 @media (max-width: 768px) {
     .demo-video-section {
-        padding: 0 0 3.5rem;
+        padding: 1.5rem 0 3.5rem;
     }
 
     .demo-video-wrapper {
-        width: 95vw;
+        width: 95%;
         border-radius: 12px;
     }
 
@@ -1006,7 +1007,7 @@ h1 .gradient-text {
 
 @media (max-width: 480px) {
     .demo-video-wrapper {
-        width: 98vw;
+        width: 98%;
         border-radius: 8px;
     }
 }
