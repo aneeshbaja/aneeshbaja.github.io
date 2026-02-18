@@ -273,7 +273,7 @@ img {
 /* Header */
 .header {
     position: fixed;
-    top: 48px;
+    top: 0;
     left: 0;
     width: 100%;
     z-index: 1000;
@@ -1100,8 +1100,8 @@ h1 .gradient-text {
     }
 
     .header {
-        position: relative;
-        top: auto;
+        position: fixed;
+        top: 0;
         padding: 16px 0;
         background: rgba(10, 8, 18, 0.95);
         backdrop-filter: blur(12px);
@@ -1113,7 +1113,7 @@ h1 .gradient-text {
     }
 
     .hero {
-        padding: 24px 16px 40px;
+        padding: 88px 16px 40px;
         min-height: auto;
     }
 
@@ -1229,13 +1229,13 @@ h1 .gradient-text {
     }
 
     .header {
-        position: relative;
-        top: auto;
+        position: fixed;
+        top: 0;
         padding: 14px 0;
     }
 
     .hero {
-        padding: 20px 12px 30px;
+        padding: 80px 12px 30px;
     }
 
     .hero h1 {
