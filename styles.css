@@ -1013,6 +1013,337 @@ h1 .gradient-text {
     }
 }
 
+/* Pricing Section */
+.pricing-section {
+    position: relative;
+    z-index: 2;
+    padding: 6rem 0 4rem;
+    background: linear-gradient(180deg, #141422 0%, #0f0f1e 50%, #141422 100%);
+}
+
+.pricing-header {
+    text-align: center;
+    margin-bottom: 3.5rem;
+}
+
+.pricing-label {
+    display: inline-block;
+    font-family: var(--font-display);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    background: linear-gradient(120deg, #FF6B5A 0%, #9C4DFF 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 1rem;
+}
+
+.pricing-title {
+    font-family: var(--font-display);
+    font-size: 3rem;
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    color: #fff;
+    margin-bottom: 0.75rem;
+    line-height: 1.2;
+}
+
+.pricing-title .gradient-text {
+    background: linear-gradient(120deg, #FF6B5A 0%, #FF8A7A 35%, #9C4DFF 70%, #FF6B5A 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradient-shift 8s ease infinite;
+}
+
+.pricing-subtitle {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    max-width: 420px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    max-width: 1100px;
+    margin: 0 auto;
+    align-items: stretch;
+}
+
+.pricing-card {
+    position: relative;
+    background: linear-gradient(145deg, rgba(26, 26, 46, 0.9) 0%, rgba(20, 20, 38, 0.95) 100%);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 20px;
+    padding: 2.25rem 1.75rem;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(255, 255, 255, 0.03) inset;
+    overflow: hidden;
+}
+
+.pricing-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--primary-color), var(--accent-purple), transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.pricing-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(255, 255, 255, 0.12);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.45), 0 0 50px rgba(156, 77, 255, 0.08);
+}
+
+.pricing-card:hover::before {
+    opacity: 0.8;
+}
+
+/* Featured card (School Year) */
+.pricing-card-featured {
+    border-color: rgba(156, 77, 255, 0.3);
+    background: linear-gradient(145deg, rgba(30, 26, 52, 0.95) 0%, rgba(22, 20, 42, 0.98) 100%);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4), 0 0 60px rgba(156, 77, 255, 0.1);
+}
+
+.pricing-card-featured::before {
+    opacity: 1;
+    background: linear-gradient(90deg, transparent, #9C4DFF, #FF6B5A, transparent);
+}
+
+.pricing-card-featured:hover {
+    border-color: rgba(156, 77, 255, 0.45);
+    box-shadow: 0 35px 70px rgba(0, 0, 0, 0.5), 0 0 80px rgba(156, 77, 255, 0.15);
+}
+
+.pricing-badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+    color: #fff;
+    font-family: var(--font-display);
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 5px 12px;
+    border-radius: var(--radius-pill);
+    letter-spacing: 0.02em;
+    box-shadow: 0 4px 12px rgba(34, 197, 94, 0.35);
+}
+
+.pricing-card-top {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.pricing-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+    background: linear-gradient(135deg, rgba(255, 107, 90, 0.15), rgba(156, 77, 255, 0.1));
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: #FF6B5A;
+    transition: all 0.3s ease;
+}
+
+.pricing-card:hover .pricing-icon {
+    transform: translateY(-3px);
+    background: linear-gradient(135deg, rgba(255, 107, 90, 0.2), rgba(156, 77, 255, 0.2));
+}
+
+.pricing-plan-name {
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 0.75rem;
+    letter-spacing: -0.01em;
+}
+
+.pricing-amount {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 2px;
+    margin-bottom: 0.5rem;
+}
+
+.pricing-dollar {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-secondary);
+    line-height: 1;
+    align-self: flex-start;
+    margin-top: 0.35rem;
+}
+
+.pricing-number {
+    font-family: var(--font-display);
+    font-size: 3.25rem;
+    font-weight: 800;
+    color: #fff;
+    line-height: 1;
+    letter-spacing: -0.04em;
+}
+
+.pricing-number.pricing-custom {
+    font-size: 2.5rem;
+    background: linear-gradient(120deg, #FF6B5A, #9C4DFF);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.pricing-period {
+    font-family: var(--font-main);
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+}
+
+.pricing-note {
+    font-size: 0.82rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    max-width: 220px;
+    margin: 0.25rem auto 0;
+    opacity: 0.85;
+}
+
+.pricing-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.75rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+}
+
+.pricing-features li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.9rem;
+    color: #CBD5E0;
+    line-height: 1.4;
+}
+
+.pricing-features li svg {
+    flex-shrink: 0;
+    color: #22c55e;
+}
+
+.pricing-btn {
+    display: block;
+    text-align: center;
+    padding: 14px 24px;
+    border-radius: var(--radius-pill);
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: all 0.25s ease;
+    cursor: pointer;
+    border: none;
+    margin-top: auto;
+}
+
+.pricing-btn-primary {
+    background: rgba(255, 255, 255, 0.08);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.pricing-card:hover .pricing-btn-primary {
+    background: linear-gradient(135deg, #9C4DFF 0%, #7C3AED 100%);
+    border-color: rgba(156, 77, 255, 0.5);
+    box-shadow: 0 8px 28px rgba(156, 77, 255, 0.4);
+}
+
+.pricing-btn-featured {
+    background: linear-gradient(135deg, #9C4DFF 0%, #7C3AED 100%);
+    color: #fff;
+    box-shadow: 0 4px 20px rgba(156, 77, 255, 0.35);
+    transition: all 0.25s ease;
+}
+
+.pricing-btn-featured:hover {
+    background: linear-gradient(135deg, #8B3EE8 0%, #6D28D9 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 28px rgba(156, 77, 255, 0.45);
+}
+
+/* Dim featured button when a sibling card is hovered */
+.pricing-grid:hover .pricing-card-featured:not(:hover) .pricing-btn-featured {
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: none;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.pricing-btn-secondary {
+    background: rgba(255, 255, 255, 0.06);
+    color: var(--text-secondary);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.82rem;
+}
+
+.pricing-card:hover .pricing-btn-secondary {
+    background: linear-gradient(135deg, #9C4DFF 0%, #7C3AED 100%);
+    color: #fff;
+    border-color: rgba(156, 77, 255, 0.5);
+    box-shadow: 0 8px 28px rgba(156, 77, 255, 0.4);
+}
+
+/* Pricing responsive */
+@media (max-width: 900px) {
+    .pricing-grid {
+        grid-template-columns: 1fr;
+        max-width: 420px;
+        gap: 1.25rem;
+    }
+
+    .pricing-title {
+        font-size: 2.25rem;
+    }
+
+    .pricing-section {
+        padding: 4rem 0 3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .pricing-title {
+        font-size: 1.85rem;
+    }
+
+    .pricing-card {
+        padding: 1.75rem 1.25rem;
+    }
+
+    .pricing-number {
+        font-size: 2.75rem;
+    }
+}
+
 /* Legacy – kept for any other uses */
 .video-container {
     position: relative;
