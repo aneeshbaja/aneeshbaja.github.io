@@ -3,142 +3,289 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
-    <title>Campanion - The Complete Suite of Teacher Tools</title>
-    
+    <title>Campanion — The Complete Suite of Teacher Tools</title>
+
     <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="logo.png">
     <link rel="icon" type="image/png" sizes="32x32" href="logo.png">
     <link rel="icon" type="image/png" sizes="16x16" href="logo.png">
     <link rel="manifest" href="/site.webmanifest">
-    <meta name="theme-color" content="#0E0E1A">
+    <meta name="theme-color" content="#2D1B12">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=DM+Sans:wght@300;400;500&family=Lora:ital,wght@0,400;0,500;1,400;1,500&family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="styles.css">
-    <link rel="icon" type="image/png" href="logo.png">
-    <link rel="shortcut icon" type="image/png" href="logo.png">
 </head>
 <body>
 
+    <!-- Noise texture overlay -->
+    <svg class="noise-overlay" aria-hidden="true">
+        <filter id="noiseFilter">
+            <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/>
+        </filter>
+        <rect width="100%" height="100%" filter="url(#noiseFilter)"/>
+    </svg>
 
-    <!-- Shooting Stars Background -->
-    <div class="shooting-stars">
-        <div class="stars"></div>
-        <div class="grid-overlay" aria-hidden="true"></div>
-    </div>
-
-    <!-- Header -->
-    <header class="header">
-        <div class="container">
-            <nav class="nav">
-                <a href="#" class="logo">
-                    <img src="logo.png" alt="Campanion Logo" class="logo-img">
-                    <span>Campanion</span>
-                </a>
-                <a href="#pricing" class="nav-cta nav-cta-buy">Buy Now</a>
+    <!-- Navigation -->
+    <header class="nav-bar">
+        <div class="nav-inner">
+            <a href="#" class="nav-logo">
+                <span class="nav-logo-text">Campanion</span>
+            </a>
+            <nav class="nav-links">
+                <a href="#features" class="nav-link">Features</a>
+                <a href="#how-it-works" class="nav-link">For Educators</a>
+                <a href="#pricing" class="nav-link">Pricing</a>
+                <a href="https://calendar.app.google/Hzuu1UqGDcuUHxVr5" target="_blank" rel="noopener noreferrer" class="nav-cta">Get Started</a>
             </nav>
+            <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        <!-- Mobile menu -->
+        <div class="mobile-menu">
+            <a href="#features" class="mobile-link">Features</a>
+            <a href="#how-it-works" class="mobile-link">For Educators</a>
+            <a href="#pricing" class="mobile-link">Pricing</a>
+            <a href="https://calendar.app.google/Hzuu1UqGDcuUHxVr5" target="_blank" rel="noopener noreferrer" class="mobile-cta">Get Started</a>
         </div>
     </header>
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <h1>Teaching <span class="gradient-text">Simplified</span></h1>
-                    <p class="subtitle">Streamlines classroom management by automating grading, feedback, and progress tracking using AI and Handwriting Detection (OCR). Transform your student's work into insights through an intuitive dashboard that integrates seamlessly with existing learning systems.</p>
-                    <div class="cta-buttons">
-                        <a href="https://calendar.app.google/Hzuu1UqGDcuUHxVr5" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Book Demo</a>
-                        <a href="mailto:founders@campanion.org" class="btn btn-secondary">Email Us! founders@campanion.org</a>
+        <div class="hero-lamplight" aria-hidden="true"></div>
+        <div class="hero-inner">
+            <div class="hero-text anim-fade-up">
+                <h1>Teaching, <em>Beautifully</em> Simplified.</h1>
+                <p class="hero-body">Spend less time buried in paperwork and more time doing what you love: teaching. Campanion handles grading, feedback, and progress tracking so you can focus on your students.</p>
+                <div class="hero-buttons">
+                    <a href="https://calendar.app.google/Hzuu1UqGDcuUHxVr5" target="_blank" rel="noopener noreferrer" class="btn btn-sage">Book a Demo</a>
+                    <a href="mailto:founders@campanion.org" class="btn btn-ghost">founders@campanion.org</a>
+                </div>
+            </div>
+            <div class="hero-visual anim-fade-up anim-delay">
+                <div class="bookshelf">
+                    <div class="books">
+                        <div class="book" style="--book-color: #2E5339; --book-h: 195px; --book-w: 32px;"><span>Grade Analytics</span></div>
+                        <div class="book" style="--book-color: #6B2737; --book-h: 220px; --book-w: 38px;"><span>Student Notes</span></div>
+                        <div class="book" style="--book-color: #8B6914; --book-h: 170px; --book-w: 28px;"><span>Curriculum</span></div>
+                        <div class="book" style="--book-color: #1E3A5F; --book-h: 205px; --book-w: 36px;"><span>Progress</span></div>
+                        <div class="book" style="--book-color: #F5EFE0; --book-h: 185px; --book-w: 30px;" data-light><span>Lesson Plans</span></div>
+                        <div class="book" style="--book-color: #4A2D6B; --book-h: 215px; --book-w: 42px;"><span>Rubrics</span></div>
+                        <div class="book" style="--book-color: #B5736A; --book-h: 160px; --book-w: 26px;"><span>Feedback</span></div>
+                        <div class="book" style="--book-color: #4A6741; --book-h: 200px; --book-w: 34px;"><span>Reports</span></div>
+                        <div class="book" style="--book-color: #8B5E3C; --book-h: 225px; --book-w: 44px;"><span>Campanion</span></div>
                     </div>
-                    <div class="hero-interactive" aria-hidden="true">
-                        <div class="hero-orb hero-orb-1"></div>
-                        <div class="hero-orb hero-orb-2"></div>
-                        <div class="hero-orb hero-orb-3"></div>
-                        <div class="hero-orb hero-orb-4"></div>
-                    </div>
-                    <div class="features-row">
-                        <div class="card">
-                            <div class="card-icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <line x1="12" y1="20" x2="12" y2="10"></line>
-                                    <line x1="18" y1="20" x2="18" y2="4"></line>
-                                    <line x1="6" y1="20" x2="6" y2="16"></line>
-                                </svg>
-                            </div>
-                            <h3>Class Analytics</h3>
-                            <p>Comprehensive insights for students and entire classes</p>
-                        </div>
-
-                        <div class="card">
-                            <div class="card-icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                                    <circle cx="9" cy="7" r="4"></circle>
-                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-                                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-                                </svg>
-                            </div>
-                            <h3>Personalized Feedback</h3>
-                            <p>Tailored insights and recommendations for each student</p>
-                        </div>
-
-                        <div class="card">
-                            <div class="card-icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-                                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
-                                </svg>
-                            </div>
-                            <h3>Smart Grading</h3>
-                            <p>Automated grading for any curriculum with instant results</p>
-                        </div>
-
-                        <div class="card">
-                            <div class="card-icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-                                    <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-                                </svg>
-                            </div>
-                            <h3>LMS Integration</h3>
-                            <p>Coming soon</p>
-                        </div>
-                    </div>
-                    
-                   
-                    
-                    <div class="trusted-by">
-                        <div class="star-line star-line-left"></div>
-                        <span>Trusted by Educators</span>
-                        <div class="star-line star-line-right"></div>
-                    </div>
+                    <div class="shelf-plank"></div>
                 </div>
 
-
+                <!-- Floating UI Cards -->
+                <div class="floating-card floating-card-1">
+                    <div class="fc-chart" aria-hidden="true">
+                        <div class="fc-bar" style="--bar-h: 60%"></div>
+                        <div class="fc-bar" style="--bar-h: 80%"></div>
+                        <div class="fc-bar" style="--bar-h: 45%"></div>
+                        <div class="fc-bar" style="--bar-h: 90%"></div>
+                    </div>
+                    <p class="fc-text">Class Average: <strong>87%</strong> <span class="fc-up">&uarr; 4pts from last week</span></p>
+                </div>
+                <div class="floating-card floating-card-2">
+                    <div class="fc-check" aria-hidden="true">&#10003;</div>
+                    <p class="fc-text-dark">28 essays graded &middot; Average time: <strong>11 sec each</strong></p>
+                </div>
             </div>
-
         </div>
+        <div class="wood-shelf-divider" aria-hidden="true"></div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="features-inner">
+            <div class="section-header">
+                <div class="eyebrow">
+                    <span class="eyebrow-line" aria-hidden="true"></span>
+                    What Campanion Does
+                </div>
+                <h2>Every tool an educator <em>actually</em> needs</h2>
+                <p class="section-sub">Stop juggling spreadsheets, gradebooks, and feedback forms. One platform, everything you need.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon feature-icon--sage">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="20" x2="12" y2="10"/><line x1="18" y1="20" x2="18" y2="4"/><line x1="6" y1="20" x2="6" y2="16"/></svg>
+                    </div>
+                    <h3>Class Analytics</h3>
+                    <p>Spot struggling students before they fall behind with visual progress dashboards.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon feature-icon--amber">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                    </div>
+                    <h3>Personalized Feedback</h3>
+                    <p>AI-drafted feedback tailored to each student's work — review, edit, and send in seconds.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon feature-icon--rose">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                    </div>
+                    <h3>Smart Grading</h3>
+                    <p>Handwriting recognition (OCR) reads and scores written work automatically, following your rubric.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon feature-icon--walnut">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+                    </div>
+                    <h3>LMS Integration <span class="coming-soon-badge">Coming Soon</span></h3>
+                    <p>Connects with Google Classroom, Canvas, and Schoology — no data re-entry.</p>
+                </div>
+            </div>
+        </div>
+        <div class="wood-shelf-divider" aria-hidden="true"></div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works" id="how-it-works">
+        <div class="hiw-inner">
+            <div class="section-header">
+                <div class="eyebrow">
+                    <span class="eyebrow-line" aria-hidden="true"></span>
+                    Simple as it gets
+                </div>
+                <h2>From assignment to insights <em>in three steps</em></h2>
+            </div>
+            <div class="hiw-grid">
+                <div class="hiw-steps">
+                    <div class="hiw-step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h4>Upload or Scan</h4>
+                            <p>Photograph handwritten work or upload digital files. OCR handles both.</p>
+                        </div>
+                    </div>
+                    <hr class="step-rule">
+                    <div class="hiw-step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h4>Review AI Grades &amp; Feedback</h4>
+                            <p>Campanion grades against your rubric and drafts personalized feedback.</p>
+                        </div>
+                    </div>
+                    <hr class="step-rule">
+                    <div class="hiw-step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h4>Publish to Your LMS</h4>
+                            <p>Approve and send with one click. Feedback goes straight to students.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="hiw-screenshot">
+                    <img src="smart_compare.png" alt="Campanion smart grading — handwritten student work on the left, AI autograder results on the right" class="hiw-screenshot-img">
+                    <p class="hiw-screenshot-caption">Real submission graded by Campanion in seconds</p>
+                </div>
+            </div>
+        </div>
+        <div class="wood-shelf-divider" aria-hidden="true"></div>
+    </section>
+
+    <!-- Testimonials Section (hidden for now) -->
+    <section class="testimonials" style="display: none;">
+        <div class="testimonials-inner">
+            <div class="testimonial-quote-bg" aria-hidden="true">&#10077;</div>
+            <div class="section-header section-header--dark">
+                <div class="eyebrow eyebrow--light">
+                    <span class="eyebrow-line eyebrow-line--light" aria-hidden="true"></span>
+                    From the Teachers' Lounge
+                </div>
+                <h2>Educators who've <em>reclaimed their evenings</em></h2>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-stars" aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p class="testimonial-text">"I used to spend every Sunday grading essays. Campanion does it in minutes, and the feedback it drafts is genuinely thoughtful. My students think I've become a better teacher — I just have a better tool."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar" style="background-color: #4A6741;">J</div>
+                        <div>
+                            <span class="testimonial-name">Jessica M.</span>
+                            <span class="testimonial-role">8th Grade English, Lincoln Middle School</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars" aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p class="testimonial-text">"The analytics dashboard flagged three students who were falling behind before I noticed. That early intervention made the difference between a failing grade and a recovery. This tool pays for itself."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar" style="background-color: #C4822A;">R</div>
+                        <div>
+                            <span class="testimonial-name">Robert K.</span>
+                            <span class="testimonial-role">High School Math, Westfield Academy</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars" aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p class="testimonial-text">"What I love most is that it doesn't try to change how I teach. I upload my rubrics, my assignments, and it just works. It fits into my workflow instead of forcing me into a new one."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar" style="background-color: #B5736A;">A</div>
+                        <div>
+                            <span class="testimonial-name">Angela D.</span>
+                            <span class="testimonial-role">5th Grade, Maplewood Elementary</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="wood-shelf-divider" aria-hidden="true"></div>
+    </section>
+
+    <!-- Demo Video Section -->
+    <section class="demo-video" id="demo">
+        <div class="demo-inner">
+            <div class="section-header">
+                <div class="eyebrow">
+                    <span class="eyebrow-line" aria-hidden="true"></span>
+                    See It in Action
+                </div>
+                <h2>Watch Campanion <em>grade in real time</em></h2>
+            </div>
+            <div class="demo-frame">
+                <iframe
+                    src="https://www.youtube.com/embed/wtAeMGId9uw"
+                    title="Campanion Demo Video"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen
+                ></iframe>
+            </div>
+        </div>
+        <div class="wood-shelf-divider" aria-hidden="true"></div>
     </section>
 
     <!-- Pricing Section -->
-    <section class="pricing-section" id="pricing">
-        <div class="container">
-            <div class="pricing-header">
-                <span class="pricing-label">Pricing</span>
-                <h2 class="pricing-title">Choose Your <span class="gradient-text">Plan</span></h2>
-                <p class="pricing-subtitle">Simple, transparent pricing for every educator</p>
+    <section class="pricing" id="pricing">
+        <div class="pricing-inner">
+            <div class="section-header">
+                <div class="eyebrow">
+                    <span class="eyebrow-line" aria-hidden="true"></span>
+                    Pricing
+                </div>
+                <h2>Choose Your <em>Plan</em></h2>
+                <p class="section-sub">Simple, transparent pricing for every educator.</p>
             </div>
             <div class="pricing-grid">
                 <!-- Teacher Plan -->
                 <div class="pricing-card">
                     <div class="pricing-card-top">
-                        <div class="pricing-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle></svg>
+                        <div class="pricing-icon pricing-icon--sage">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
                         </div>
                         <h3 class="pricing-plan-name">Teacher Plan</h3>
                         <div class="pricing-amount">
@@ -149,20 +296,20 @@
                         <p class="pricing-note">Only charged during the months you are teaching</p>
                     </div>
                     <ul class="pricing-features">
-                        <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>Smart Grading & OCR</li>
-                        <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>Class Analytics Dashboard</li>
-                        <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>Personalized Feedback</li>
-                        <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>Flexible Monthly Billing</li>
+                        <li><span class="pricing-check">&#10003;</span>Smart Grading &amp; OCR</li>
+                        <li><span class="pricing-check">&#10003;</span>Class Analytics Dashboard</li>
+                        <li><span class="pricing-check">&#10003;</span>Personalized Feedback</li>
+                        <li><span class="pricing-check">&#10003;</span>Flexible Monthly Billing</li>
                     </ul>
-                    <a href="https://buy.stripe.com/28E28j9zv16h80S5nZ48002" target="_blank" rel="noopener noreferrer" class="pricing-btn pricing-btn-primary">Get Started</a>
+                    <a href="https://buy.stripe.com/28E28j9zv16h80S5nZ48002" target="_blank" rel="noopener noreferrer" class="btn btn-sage pricing-btn">Get Started</a>
                 </div>
 
-                <!-- School Year Plan -->
-                <div class="pricing-card pricing-card-featured">
+                <!-- School Year Plan (Featured) -->
+                <div class="pricing-card pricing-card--featured">
                     <div class="pricing-badge">Save 10%</div>
                     <div class="pricing-card-top">
-                        <div class="pricing-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                        <div class="pricing-icon pricing-icon--amber">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
                         </div>
                         <h3 class="pricing-plan-name">School Year Plan</h3>
                         <div class="pricing-amount">
@@ -170,75 +317,68 @@
                             <span class="pricing-number">180</span>
                             <span class="pricing-period">/year</span>
                         </div>
-                        <p class="pricing-note">10% discount — best value for the full school year</p>
+                        <p class="pricing-note">10% discount &mdash; best value for the full school year</p>
                     </div>
                     <ul class="pricing-features">
-                        <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>Everything in Teacher Plan</li>
-                        <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>Pay Once, Use All Year</li>
-                        <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>No Monthly Hassle</li>
-                        <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>10% Annual Savings</li>
+                        <li><span class="pricing-check">&#10003;</span>Everything in Teacher Plan</li>
+                        <li><span class="pricing-check">&#10003;</span>Pay Once, Use All Year</li>
+                        <li><span class="pricing-check">&#10003;</span>No Monthly Hassle</li>
+                        <li><span class="pricing-check">&#10003;</span>10% Annual Savings</li>
                     </ul>
-                    <a href="https://buy.stripe.com/cNi4gr2739CNepg6s348003" target="_blank" rel="noopener noreferrer" class="pricing-btn pricing-btn-featured">Get Started</a>
+                    <a href="https://buy.stripe.com/cNi4gr2739CNepg6s348003" target="_blank" rel="noopener noreferrer" class="btn btn-amber pricing-btn">Get Started</a>
                 </div>
 
-                <!-- School/District Plan -->
+                <!-- School / District Plan -->
                 <div class="pricing-card">
                     <div class="pricing-card-top">
-                        <div class="pricing-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                        <div class="pricing-icon pricing-icon--walnut">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
                         </div>
                         <h3 class="pricing-plan-name">School / District</h3>
                         <div class="pricing-amount">
-                            <span class="pricing-number pricing-custom">Custom</span>
+                            <span class="pricing-number pricing-number--custom">Custom</span>
                         </div>
                         <p class="pricing-note">Tailored pricing for schools and districts</p>
                     </div>
                     <ul class="pricing-features">
-                        <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>Everything in School Year</li>
-                        <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>Volume Licensing</li>
-                        <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>Admin Dashboard</li>
-                        <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>Custom Implementation</li>
+                        <li><span class="pricing-check">&#10003;</span>Everything in School Year</li>
+                        <li><span class="pricing-check">&#10003;</span>Volume Licensing</li>
+                        <li><span class="pricing-check">&#10003;</span>Admin Dashboard</li>
+                        <li><span class="pricing-check">&#10003;</span>Custom Implementation</li>
                     </ul>
-                    <a href="mailto:founders@campanion.org" class="pricing-btn pricing-btn-secondary">Email: founders@campanion.org</a>
+                    <a href="mailto:founders@campanion.org" class="btn btn-ghost pricing-btn">Email: founders@campanion.org</a>
                 </div>
             </div>
         </div>
+        <div class="wood-shelf-divider" aria-hidden="true"></div>
     </section>
 
-    <!-- Demo Video Section – full-width, outside container -->
-    <div class="demo-video-section">
-        <div class="demo-cta">
-            <span class="demo-cta-text">Watch the Demo</span>
-            <div class="demo-arrow" aria-hidden="true">
-                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                    <polyline points="6 9 12 15 18 9"></polyline>
-                </svg>
-                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                    <polyline points="6 9 12 15 18 9"></polyline>
-                </svg>
+    <!-- CTA Banner -->
+    <section class="cta-banner">
+        <div class="cta-vertical-line cta-vertical-line--top" aria-hidden="true"></div>
+        <div class="cta-inner">
+            <div class="eyebrow">
+                <span class="eyebrow-line" aria-hidden="true"></span>
+                Ready to begin?
+            </div>
+            <h2>Reclaim <em>your time.</em></h2>
+            <p class="cta-body">Join educators who've automated the paperwork and rediscovered why they started teaching.</p>
+            <div class="cta-buttons">
+                <a href="https://calendar.app.google/Hzuu1UqGDcuUHxVr5" target="_blank" rel="noopener noreferrer" class="btn btn-amber">Book a Free Demo</a>
+                <a href="mailto:founders@campanion.org" class="btn btn-ghost">founders@campanion.org</a>
             </div>
         </div>
-        <div class="demo-video-wrapper">
-            <iframe
-                src="https://www.youtube.com/embed/wtAeMGId9uw"
-                title="Campanion Demo Video"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen>
-            </iframe>
+        <div class="cta-vertical-line cta-vertical-line--bottom" aria-hidden="true"></div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <p class="footer-copy">&copy; 2025 Campanion Inc. All rights reserved.</p>
+            <a href="mailto:founders@campanion.org" class="footer-email">founders@campanion.org</a>
         </div>
-    </div>
+    </footer>
 
     <script src="main.js"></script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-

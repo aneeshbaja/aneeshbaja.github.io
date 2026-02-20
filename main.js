@@ -1,59 +1,36 @@
-document.addEventListener('DOMContentLoaded', function() {
-    // Header scroll behavior
-    const header = document.querySelector('.header');
-    
-    if (header) {
-        window.addEventListener('scroll', function() {
-            if (window.scrollY > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        }, { passive: true });
-    }
+document.addEventListener('DOMContentLoaded', function () {
 
-    // Hero interactive orbs – container follows mouse for subtle parallax
-    const heroEl = document.querySelector('.hero');
-    const heroInteractive = document.querySelector('.hero-interactive');
+    // --- Mobile hamburger menu ---
+    const hamburger = document.querySelector('.nav-hamburger');
+    const mobileMenu = document.querySelector('.mobile-menu');
 
-    if (heroEl && heroInteractive) {
-        let mouseX = 0.5, mouseY = 0.5;
-        let currentX = 0.5, currentY = 0.5;
-
-        heroEl.addEventListener('mousemove', function(e) {
-            const rect = heroEl.getBoundingClientRect();
-            mouseX = (e.clientX - rect.left) / rect.width;
-            mouseY = (e.clientY - rect.top) / rect.height;
+    if (hamburger && mobileMenu) {
+        hamburger.addEventListener('click', function () {
+            const isOpen = hamburger.classList.toggle('active');
+            mobileMenu.classList.toggle('open');
+            hamburger.setAttribute('aria-expanded', isOpen);
         });
 
-        heroEl.addEventListener('mouseleave', function() {
-            mouseX = 0.5;
-            mouseY = 0.5;
+        // Close menu when a link is clicked
+        mobileMenu.querySelectorAll('a').forEach(function (link) {
+            link.addEventListener('click', function () {
+                hamburger.classList.remove('active');
+                mobileMenu.classList.remove('open');
+                hamburger.setAttribute('aria-expanded', 'false');
+            });
         });
-
-        function tick() {
-            currentX += (mouseX - currentX) * 0.04;
-            currentY += (mouseY - currentY) * 0.04;
-            const dx = (currentX - 0.5) * 20;
-            const dy = (currentY - 0.5) * 20;
-            heroInteractive.style.transform = 'translate(' + dx + 'px, ' + dy + 'px)';
-            requestAnimationFrame(tick);
-        }
-        requestAnimationFrame(tick);
     }
 
-    // Smooth scrolling for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    // --- Smooth scrolling for anchor links ---
+    document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
-            
-            const targetId = this.getAttribute('href');
+            var targetId = this.getAttribute('href');
             if (targetId === '#') return;
-            
-            const targetElement = document.querySelector(targetId);
+            var targetElement = document.querySelector(targetId);
             if (targetElement) {
                 window.scrollTo({
-                    top: targetElement.offsetTop - 20,
+                    top: targetElement.offsetTop - 68, // nav height offset
                     behavior: 'smooth'
                 });
             }
