@@ -782,7 +782,7 @@ h1 em, h2 em {
 
 .hiw-grid {
     display: grid;
-    grid-template-columns: 2fr 3fr;
+    grid-template-columns: 1fr 2fr;
     gap: 64px;
     align-items: center;
 }
