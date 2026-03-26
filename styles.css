@@ -408,7 +408,11 @@ h1 em, h2 em {
 .hero-buttons {
     display: flex;
     gap: 16px;
-    flex-wrap: wrap;
+    align-items: center;
+}
+
+.hero-buttons .btn {
+    white-space: nowrap;
 }
 
 /* Hero Visual — Bookshelf */
