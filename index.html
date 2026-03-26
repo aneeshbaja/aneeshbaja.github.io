@@ -100,11 +100,11 @@
         <div class="hero-lamplight" aria-hidden="true"></div>
         <div class="hero-inner">
             <div class="hero-text anim-fade-up">
-                <h1>Teaching, <em>Beautifully</em> Simplified.</h1>
-                <p class="hero-body">Spend less time buried in paperwork and more time doing what you love: teaching. Campanion handles grading, feedback, and progress tracking so you can focus on your students.</p>
+                <h1>Grade 60 Essays in <em>Under 30 Minutes</em></h1>
+                <p class="hero-body">Campanion learns how you grade and applies your style to every assignment. Same feedback quality, fraction of the time.</p>
                 <div class="hero-buttons">
-                    <a href="https://calendar.app.google/Hzuu1UqGDcuUHxVr5" target="_blank" rel="noopener noreferrer" class="btn btn-sage">Try it for Free</a>
-                    <a href="mailto:founders@campanion.org" class="btn btn-ghost">founders@campanion.org</a>
+                    <a href="https://calendar.app.google/Hzuu1UqGDcuUHxVr5" target="_blank" rel="noopener noreferrer" class="btn btn-sage">Book a Free Walkthrough</a>
+                    <button type="button" class="btn btn-ghost" id="sample-essay-btn">See a Sample Graded Essay &rarr;</button>
                 </div>
             </div>
             <div class="hero-visual anim-fade-up anim-delay">
@@ -137,6 +137,38 @@
                     <div class="fc-check" aria-hidden="true">&#10003;</div>
                     <p class="fc-text-dark">28 essays graded &middot; Average time: <strong>11 sec each</strong></p>
                 </div>
+            </div>
+        </div>
+        <div class="wood-shelf-divider" aria-hidden="true"></div>
+    </section>
+
+    <!-- Email Capture Modal -->
+    <div class="modal-overlay" id="sample-modal">
+        <div class="modal-card">
+            <button type="button" class="modal-close" id="modal-close" aria-label="Close">&times;</button>
+            <h3>Get a Sample Graded Essay</h3>
+            <p class="modal-body">See exactly how Campanion grades and gives feedback. We'll send a real before-and-after example straight to your inbox.</p>
+            <form class="modal-form" id="sample-form">
+                <input type="email" name="email" placeholder="Enter your school email" required class="modal-input">
+                <button type="submit" class="btn btn-sage modal-submit">Send Me a Sample</button>
+            </form>
+            <p class="modal-disclaimer">No spam. Just one sample essay.</p>
+        </div>
+    </div>
+
+    <!-- Why We Meet With Every Teacher -->
+    <section class="why-meet">
+        <div class="why-meet-inner">
+            <div class="section-header">
+                <div class="eyebrow">
+                    <span class="eyebrow-line" aria-hidden="true"></span>
+                    Personal Setup
+                </div>
+                <h2>Your Grading Style is Unique. <em>Your Setup Should Be Too.</em></h2>
+            </div>
+            <div class="why-meet-content">
+                <p class="why-meet-body">Every teacher grades differently. That's why we set up Campanion with you personally. In a 15-minute walkthrough, we'll grade a real assignment together using your rubric so you can see exactly how it works with your students' actual work.</p>
+                <a href="https://calendar.app.google/Hzuu1UqGDcuUHxVr5" target="_blank" rel="noopener noreferrer" class="btn btn-amber">Book Your Free Walkthrough</a>
             </div>
         </div>
         <div class="wood-shelf-divider" aria-hidden="true"></div>
@@ -415,6 +447,61 @@
         </div>
     </footer>
 
+    <!-- Sticky Mobile Bottom Bar -->
+    <div class="mobile-sticky-bar">
+        <a href="https://calendar.app.google/Hzuu1UqGDcuUHxVr5" target="_blank" rel="noopener noreferrer" class="btn btn-sage mobile-sticky-btn" onclick="fbq('track', 'Schedule');">Book a Free Walkthrough</a>
+    </div>
+
     <script src="main.js"></script>
+    <script>
+    (function() {
+        var GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyqP6uU4ahoDk9PHEr6DWxNGN_T6rce6UZf19STwCz6ao_F3aqlgT80XTRvHktPW8ysSw/exec';
+
+        var modal = document.getElementById('sample-modal');
+        var openBtn = document.getElementById('sample-essay-btn');
+        var closeBtn = document.getElementById('modal-close');
+        var form = document.getElementById('sample-form');
+        var submitBtn = form.querySelector('.modal-submit');
+
+        openBtn.addEventListener('click', function() {
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+
+        closeBtn.addEventListener('click', function() {
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal) {
+                modal.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            var email = form.querySelector('input[name="email"]').value.trim();
+            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) return;
+
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Sending...';
+
+            fetch(GOOGLE_SCRIPT_URL, {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ name: 'Sample Request', email: email, school: 'N/A' })
+            }).then(function() {
+                form.innerHTML = '<p class="modal-success">Check your inbox! We\'ll send the sample shortly.</p>';
+            }).catch(function() {
+                form.innerHTML = '<p class="modal-success">Thanks! We\'ll be in touch at ' + email + '</p>';
+            });
+        });
+    })();
+    </script>
 </body>
 </html>
