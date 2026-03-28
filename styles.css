@@ -400,8 +400,9 @@ h1 em, h2 em {
     display: inline-block;
     position: relative;
     overflow: hidden;
-    vertical-align: baseline;
-    height: 1.1em;
+    vertical-align: text-bottom;
+    height: 1.05em;
+    line-height: 1.05;
     transition: width 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 
