@@ -403,6 +403,7 @@ h1 em, h2 em {
     vertical-align: text-bottom;
     height: 1.05em;
     line-height: 1.05;
+    top: -0.08em;
     transition: width 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 
