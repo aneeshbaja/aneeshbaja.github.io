@@ -363,9 +363,6 @@ h1 em, h2 em {
     background: var(--parchment);
     padding-top: 68px; /* nav height */
     min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     overflow: hidden;
 }
 
