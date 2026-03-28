@@ -398,8 +398,10 @@ h1 em, h2 em {
 
 .rotating-text-wrapper {
     display: inline-flex;
+    align-items: baseline;
     overflow: hidden;
     padding-bottom: 0.1em;
+    vertical-align: baseline;
     transition: width 0.6s cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 
