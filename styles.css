@@ -187,7 +187,7 @@ h1 em, h2 em {
     width: 100%;
     max-width: 1280px;
     margin: 0 auto;
-    padding: 0 80px;
+    padding: 0 24px;
     height: 68px;
     display: flex;
     align-items: center;
@@ -385,7 +385,7 @@ h1 em, h2 em {
     z-index: 1;
     max-width: 1280px;
     margin: 0 auto;
-    padding: 96px 80px;
+    padding: 96px 24px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 80px;
@@ -617,7 +617,7 @@ h1 em, h2 em {
 .features-inner {
     max-width: 1280px;
     margin: 0 auto;
-    padding: 96px 80px;
+    padding: 96px 24px;
 }
 
 .section-header {
@@ -785,7 +785,7 @@ h1 em, h2 em {
 .hiw-inner {
     max-width: 1280px;
     margin: 0 auto;
-    padding: 96px 80px;
+    padding: 96px 24px;
 }
 
 .hiw-grid {
@@ -895,7 +895,7 @@ h1 em, h2 em {
 .testimonials-inner {
     max-width: 1280px;
     margin: 0 auto;
-    padding: 96px 80px;
+    padding: 96px 24px;
     position: relative;
 }
 
@@ -1009,7 +1009,7 @@ h1 em, h2 em {
 .pricing-inner {
     max-width: 1280px;
     margin: 0 auto;
-    padding: 96px 80px;
+    padding: 96px 24px;
 }
 
 .pricing-grid {
@@ -1661,7 +1661,7 @@ h1 em, h2 em {
 .why-meet-inner {
     max-width: 1280px;
     margin: 0 auto;
-    padding: 96px 80px;
+    padding: 96px 24px;
 }
 
 .why-meet-content {
