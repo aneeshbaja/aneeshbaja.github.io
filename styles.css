@@ -362,6 +362,10 @@ h1 em, h2 em {
     position: relative;
     background: var(--parchment);
     padding-top: 68px; /* nav height */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     overflow: hidden;
 }
 
@@ -1458,6 +1462,14 @@ h1 em, h2 em {
 
     .hero-visual {
         order: 2;
+    }
+
+    .floating-card-1 {
+        right: 10px;
+    }
+
+    .floating-card-2 {
+        left: 10px;
     }
 
     .features-inner {
