@@ -362,7 +362,6 @@ h1 em, h2 em {
     position: relative;
     background: var(--parchment);
     padding-top: 68px; /* nav height */
-    min-height: 100vh;
     overflow: hidden;
 }
 
@@ -644,7 +643,6 @@ h1 em, h2 em {
 .features {
     background: var(--cream);
     position: relative;
-    min-height: 100vh;
 }
 
 .features-inner {
@@ -813,7 +811,6 @@ h1 em, h2 em {
 .how-it-works {
     background: var(--parchment);
     position: relative;
-    min-height: 100vh;
 }
 
 .hiw-inner {
@@ -924,7 +921,6 @@ h1 em, h2 em {
     background: var(--mahogany);
     position: relative;
     overflow: hidden;
-    min-height: 100vh;
 }
 
 .testimonials-inner {
@@ -1039,7 +1035,6 @@ h1 em, h2 em {
 .pricing {
     background: var(--parchment);
     position: relative;
-    min-height: 100vh;
 }
 
 .pricing-inner {
@@ -1684,7 +1679,6 @@ h1 em, h2 em {
 .why-meet {
     background: var(--parchment);
     position: relative;
-    min-height: 100vh;
 }
 
 .why-meet-inner {
