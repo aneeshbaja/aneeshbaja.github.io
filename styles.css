@@ -187,7 +187,7 @@ h1 em, h2 em {
     width: 100%;
     max-width: 1280px;
     margin: 0 auto;
-    padding: 0 24px;
+    padding: 0 80px;
     height: 68px;
     display: flex;
     align-items: center;
@@ -362,7 +362,6 @@ h1 em, h2 em {
     position: relative;
     background: var(--parchment);
     padding-top: 68px; /* nav height */
-    min-height: 100vh;
     overflow: hidden;
 }
 
@@ -382,7 +381,7 @@ h1 em, h2 em {
     z-index: 1;
     max-width: 1280px;
     margin: 0 auto;
-    padding: 96px 24px;
+    padding: 96px 80px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 80px;
@@ -614,7 +613,7 @@ h1 em, h2 em {
 .features-inner {
     max-width: 1280px;
     margin: 0 auto;
-    padding: 96px 24px;
+    padding: 96px 80px;
 }
 
 .section-header {
@@ -782,7 +781,7 @@ h1 em, h2 em {
 .hiw-inner {
     max-width: 1280px;
     margin: 0 auto;
-    padding: 96px 24px;
+    padding: 96px 80px;
 }
 
 .hiw-grid {
@@ -892,7 +891,7 @@ h1 em, h2 em {
 .testimonials-inner {
     max-width: 1280px;
     margin: 0 auto;
-    padding: 96px 24px;
+    padding: 96px 80px;
     position: relative;
 }
 
@@ -1006,7 +1005,7 @@ h1 em, h2 em {
 .pricing-inner {
     max-width: 1280px;
     margin: 0 auto;
-    padding: 96px 24px;
+    padding: 96px 80px;
 }
 
 .pricing-grid {
@@ -1461,14 +1460,6 @@ h1 em, h2 em {
         order: 2;
     }
 
-    .floating-card-1 {
-        right: 10px;
-    }
-
-    .floating-card-2 {
-        left: 10px;
-    }
-
     .features-inner {
         padding: 72px 48px;
     }
@@ -1658,7 +1649,7 @@ h1 em, h2 em {
 .why-meet-inner {
     max-width: 1280px;
     margin: 0 auto;
-    padding: 96px 24px;
+    padding: 96px 80px;
 }
 
 .why-meet-content {
