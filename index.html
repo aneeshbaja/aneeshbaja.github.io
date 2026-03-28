@@ -100,7 +100,7 @@
         <div class="hero-lamplight" aria-hidden="true"></div>
         <div class="hero-inner">
             <div class="hero-text anim-fade-up">
-                <h1>Grade 60 <span class="rotating-text-wrapper"><span class="rotating-text-sizer" aria-hidden="true">Worksheets</span><span class="rotating-text">Essays</span><span class="rotating-text">Math Tests</span><span class="rotating-text">Lab Reports</span><span class="rotating-text">Worksheets</span><span class="rotating-text">Exams</span></span> in <em>Under 30 Minutes</em></h1>
+                <h1>Grade 60 <span class="rotating-text-wrapper" id="rotating-wrapper"><span class="rotating-text">Essays</span></span> in <em>Under 30 Minutes</em></h1>
                 <p class="hero-body">Campanion learns how you grade and applies your style to every assignment. Same feedback quality, fraction of the time.</p>
                 <div class="hero-buttons">
                     <a href="https://buy.stripe.com/00wcMXcLH6qB0yq2bN48005" target="_blank" rel="noopener noreferrer" class="btn btn-sage">Start Free Trial</a>
@@ -452,6 +452,37 @@
         <a href="https://buy.stripe.com/00wcMXcLH6qB0yq2bN48005" target="_blank" rel="noopener noreferrer" class="btn btn-sage mobile-sticky-btn">Start Free Trial</a>
     </div>
 
+    <script>
+    (function() {
+        var words = ['Essays', 'Math Tests', 'Lab Reports', 'Worksheets', 'Exams'];
+        var wrapper = document.getElementById('rotating-wrapper');
+        var span = wrapper.querySelector('.rotating-text');
+        var current = 0;
+
+        function setWidth() {
+            span.style.position = 'relative';
+            wrapper.style.width = span.offsetWidth + 'px';
+        }
+
+        setWidth();
+        window.addEventListener('resize', setWidth);
+
+        setInterval(function() {
+            span.style.opacity = '0';
+            span.style.transform = 'translateY(-40%)';
+
+            setTimeout(function() {
+                current = (current + 1) % words.length;
+                span.textContent = words[current];
+                span.style.transform = 'translateY(40%)';
+                span.offsetHeight;
+                wrapper.style.width = span.offsetWidth + 'px';
+                span.style.opacity = '1';
+                span.style.transform = 'translateY(0)';
+            }, 400);
+        }, 3000);
+    })();
+    </script>
     <script src="main.js"></script>
     <script>
     (function() {
