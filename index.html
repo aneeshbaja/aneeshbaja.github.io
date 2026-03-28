@@ -455,16 +455,28 @@
     <script>
     (function() {
         var words = ['Essays', 'Math Tests', 'Lab Reports', 'Worksheets', 'Exams'];
-        var span = document.querySelector('#rotating-wrapper .rotating-text');
+        var wrapper = document.getElementById('rotating-wrapper');
+        var span = wrapper.querySelector('.rotating-text');
         var current = 0;
+
+        wrapper.style.width = span.scrollWidth + 'px';
+
+        window.addEventListener('resize', function() {
+            wrapper.style.width = span.scrollWidth + 'px';
+        });
 
         setInterval(function() {
             span.style.opacity = '0';
+
             setTimeout(function() {
                 current = (current + 1) % words.length;
                 span.textContent = words[current];
-                span.style.opacity = '1';
-            }, 500);
+                wrapper.style.width = span.scrollWidth + 'px';
+
+                setTimeout(function() {
+                    span.style.opacity = '1';
+                }, 50);
+            }, 400);
         }, 3000);
     })();
     </script>
