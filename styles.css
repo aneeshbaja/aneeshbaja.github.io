@@ -402,6 +402,7 @@ h1 em, h2 em {
     overflow: hidden;
     vertical-align: bottom;
     height: 1.1em;
+    white-space: nowrap;
 }
 
 .rotating-text {
@@ -411,6 +412,14 @@ h1 em, h2 em {
     position: absolute;
     top: 0;
     left: 0;
+    white-space: nowrap;
+}
+
+.rotating-text-sizer {
+    visibility: hidden;
+    display: block;
+    height: 0;
+    white-space: nowrap;
 }
 
 .rotating-text:first-child {
