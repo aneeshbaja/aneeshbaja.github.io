@@ -379,12 +379,13 @@ h1 em, h2 em {
 .hero-inner {
     position: relative;
     z-index: 1;
-    max-width: 1280px;
+    max-width: 1440px;
     margin: 0 auto;
     padding: 96px 80px;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1.5fr;
     gap: 80px;
+    align-items: center;
     align-items: center;
 }
 
@@ -429,85 +430,25 @@ h1 em, h2 em {
     white-space: nowrap;
 }
 
-/* Hero Visual — Bookshelf */
+/* Hero Visual */
 .hero-visual {
     position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }
 
-.bookshelf {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.hero-demo-video {
     width: 100%;
-    max-width: 460px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    pointer-events: none;
 }
 
-.books {
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    gap: 4px;
-    padding: 0 12px;
-    min-height: 230px;
-}
-
-.book {
-    width: var(--book-w, 32px);
-    height: var(--book-h, 180px);
-    background: var(--book-color, #5C3D2E);
-    border-radius: 2px 4px 4px 2px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: default;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-    position: relative;
-    box-shadow: inset -2px 0 4px rgba(0,0,0,0.15), inset 1px 0 2px rgba(255,255,255,0.05);
-}
-
-.book span {
-    writing-mode: vertical-rl;
-    text-orientation: mixed;
-    font-family: var(--font-ui);
-    font-size: 9px;
-    font-weight: 500;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    color: rgba(255,255,255,0.75);
-    white-space: nowrap;
-    user-select: none;
-}
-
-.book[data-light] span {
-    color: var(--walnut);
-}
-
-.book:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 24px rgba(28,25,23,0.25), inset -2px 0 4px rgba(0,0,0,0.15);
-}
-
-.shelf-plank {
-    width: calc(100% + 24px);
-    height: 14px;
-    background: linear-gradient(180deg, #B8895A 0%, #8B6340 40%, var(--walnut) 80%, #2A1608 100%);
-    border-radius: 2px;
-    box-shadow: 0 4px 12px rgba(28,25,23,0.2);
-    position: relative;
-}
-
-.shelf-plank::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 1px;
-    background: rgba(255,255,255,0.08);
+.hero-demo-video video {
+    display: block;
+    width: 115%;
+    margin-left: -7.5%;
+    height: auto;
+    object-fit: cover;
 }
 
 /* Floating UI Cards */
@@ -1612,17 +1553,8 @@ h1 em, h2 em {
         padding: 0;
     }
 
-    /* Bookshelf adjustments */
-    .books {
-        gap: 3px;
-    }
-
-    .book {
-        --book-w: 26px !important;
-    }
-
-    .book span {
-        font-size: 7px;
+    .hero-demo-video {
+        max-width: 100%;
     }
 }
 
