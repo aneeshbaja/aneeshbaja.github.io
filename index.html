@@ -52,7 +52,7 @@
 <body>
 <script>
   document.addEventListener('DOMContentLoaded', function() {
-    document.querySelectorAll('a[href="free-trial.html"]').forEach(function(btn) {
+    document.querySelectorAll('.open-trial-modal').forEach(function(btn) {
       btn.addEventListener('click', function() {
         fbq('track', 'Schedule');
       });
@@ -103,7 +103,7 @@
                 <h1>Grade 60 <span class="rotating-text-wrapper" id="rotating-wrapper"><span class="rotating-text">Essays</span></span> in <em>Under 30 Minutes</em></h1>
                 <p class="hero-body">Campanion learns how you grade and applies your style to every assignment. Same feedback quality, fraction of the time.</p>
                 <div class="hero-buttons">
-                    <a href="free-trial.html" class="btn btn-sage">Start Free Trial</a>
+                    <button type="button" class="btn btn-sage open-trial-modal">Start Free Trial</button>
                     <button type="button" class="btn btn-ghost" id="sample-essay-btn" style="display:none;">See a Sample Graded Essay &rarr;</button>
                 </div>
             </div>
@@ -118,17 +118,55 @@
         <div class="wood-shelf-divider" aria-hidden="true"></div>
     </section>
 
-    <!-- Email Capture Modal -->
-    <div class="modal-overlay" id="sample-modal" style="display:none;">
-        <div class="modal-card">
-            <button type="button" class="modal-close" id="modal-close" aria-label="Close">&times;</button>
-            <h3>Get a Sample Graded Essay</h3>
-            <p class="modal-body">See exactly how Campanion grades and gives feedback. We'll send a real before-and-after example straight to your inbox.</p>
-            <form class="modal-form" id="sample-form">
-                <input type="email" name="email" placeholder="Enter your school email" required class="modal-input">
-                <button type="submit" class="btn btn-sage modal-submit">Send Me a Sample</button>
-            </form>
-            <p class="modal-disclaimer">No spam. Just one sample essay.</p>
+    <!-- Free Trial Modal -->
+    <div class="modal-overlay" id="trial-modal">
+        <div class="modal-card trial-modal-card">
+            <button type="button" class="modal-close" id="trial-modal-close" aria-label="Close">&times;</button>
+            <div class="trial-modal-grid">
+                <!-- Left: Info -->
+                <div class="trial-modal-info">
+                    <h3>Start for Free. <em>No Card Needed.</em></h3>
+                    <p class="modal-body">Try Campanion with zero commitment. Get 4 free grading sessions and see how much time you'll save.</p>
+                    <div class="trial-modal-highlight">4 free grading sessions &mdash; no credit card required.</div>
+                    <ul class="trial-modal-perks">
+                        <li><span class="trial-check">&#10003;</span> 4 free grading sessions</li>
+                        <li><span class="trial-check">&#10003;</span> Instant access to your grading dashboard</li>
+                        <li><span class="trial-check">&#10003;</span> No credit card required</li>
+                    </ul>
+                </div>
+                <!-- Right: Form -->
+                <div class="trial-modal-form-wrap">
+                    <h4>Get Started</h4>
+                    <form class="trial-modal-form" id="trialForm">
+                        <div>
+                            <label for="trial-name">Name <span class="tm-req">*</span></label>
+                            <input type="text" id="trial-name" name="name" required placeholder="Your name" autocomplete="name">
+                        </div>
+                        <div>
+                            <label for="trial-email">Email <span class="tm-req">*</span></label>
+                            <input type="email" id="trial-email" name="email" required placeholder="Your email" autocomplete="email">
+                        </div>
+                        <div>
+                            <label for="trial-subject">What do you teach? <span class="tm-req">*</span></label>
+                            <select id="trial-subject" name="subject" required>
+                                <option value="" disabled selected>Select your subject</option>
+                                <option value="English / Language Arts">English / Language Arts</option>
+                                <option value="Math">Math</option>
+                                <option value="Science">Science</option>
+                                <option value="Social Studies / History">Social Studies / History</option>
+                                <option value="World Languages">World Languages</option>
+                                <option value="Special Education">Special Education</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-sage trial-modal-submit">
+                            <span class="tm-btn-text">Start My Free Trial</span>
+                            <span class="tm-btn-loader" style="display:none;">Sending...</span>
+                        </button>
+                        <div id="trialFormResponse" class="trial-modal-response"></div>
+                    </form>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -386,7 +424,7 @@
             <h2>Reclaim <em>your time.</em></h2>
             <p class="cta-body">Join educators who've automated the paperwork and rediscovered why they started teaching.</p>
             <div class="cta-buttons">
-                <a href="free-trial.html" class="btn btn-amber">Try it for Free</a>
+                <button type="button" class="btn btn-amber open-trial-modal">Try it for Free</button>
                 <a href="mailto:founders@campanion.org" class="btn btn-ghost">founders@campanion.org</a>
             </div>
         </div>
@@ -403,7 +441,7 @@
 
     <!-- Sticky Mobile Bottom Bar -->
     <div class="mobile-sticky-bar">
-        <a href="free-trial.html" class="btn btn-sage mobile-sticky-btn">Start Free Trial</a>
+        <button type="button" class="btn btn-sage mobile-sticky-btn open-trial-modal">Start Free Trial</button>
     </div>
 
     <script>
@@ -439,15 +477,20 @@
     (function() {
         var GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyqP6uU4ahoDk9PHEr6DWxNGN_T6rce6UZf19STwCz6ao_F3aqlgT80XTRvHktPW8ysSw/exec';
 
-        var modal = document.getElementById('sample-modal');
-        var openBtn = document.getElementById('sample-essay-btn');
-        var closeBtn = document.getElementById('modal-close');
-        var form = document.getElementById('sample-form');
-        var submitBtn = form.querySelector('.modal-submit');
+        var modal = document.getElementById('trial-modal');
+        var closeBtn = document.getElementById('trial-modal-close');
+        var form = document.getElementById('trialForm');
+        var submitBtn = form.querySelector('.trial-modal-submit');
+        var btnText = submitBtn.querySelector('.tm-btn-text');
+        var btnLoader = submitBtn.querySelector('.tm-btn-loader');
+        var formResponse = document.getElementById('trialFormResponse');
 
-        openBtn.addEventListener('click', function() {
-            modal.classList.add('active');
-            document.body.style.overflow = 'hidden';
+        // Open modal from any trigger button
+        document.querySelectorAll('.open-trial-modal').forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
         });
 
         closeBtn.addEventListener('click', function() {
@@ -464,23 +507,41 @@
 
         form.addEventListener('submit', function(e) {
             e.preventDefault();
+            formResponse.textContent = '';
+            formResponse.className = 'trial-modal-response';
 
-            var email = form.querySelector('input[name="email"]').value.trim();
+            var name = document.getElementById('trial-name').value.trim();
+            var email = document.getElementById('trial-email').value.trim();
+            var subject = document.getElementById('trial-subject').value;
+
             var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailRegex.test(email)) return;
+            if (!emailRegex.test(email)) {
+                formResponse.textContent = 'Please enter a valid email address.';
+                formResponse.className = 'trial-modal-response error';
+                return;
+            }
 
             submitBtn.disabled = true;
-            submitBtn.textContent = 'Sending...';
+            btnText.style.display = 'none';
+            btnLoader.style.display = 'inline';
 
             fetch(GOOGLE_SCRIPT_URL, {
                 method: 'POST',
                 mode: 'no-cors',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ name: 'Sample Request', email: email, school: 'N/A' })
+                body: JSON.stringify({ name: name, email: email, school: subject, source: 'Free Trial Signup' })
             }).then(function() {
-                form.innerHTML = '<p class="modal-success">Check your inbox! We\'ll send the sample shortly.</p>';
+                formResponse.textContent = "You're in! We'll send you everything you need to get started.";
+                formResponse.className = 'trial-modal-response success';
+                form.reset();
+                if (typeof fbq !== 'undefined') { fbq('track', 'StartTrial'); }
             }).catch(function() {
-                form.innerHTML = '<p class="modal-success">Thanks! We\'ll be in touch at ' + email + '</p>';
+                formResponse.textContent = "Thanks, " + name + "! We'll be in touch at " + email + ".";
+                formResponse.className = 'trial-modal-response success';
+            }).finally(function() {
+                submitBtn.disabled = false;
+                btnText.style.display = 'inline';
+                btnLoader.style.display = 'none';
             });
         });
     })();

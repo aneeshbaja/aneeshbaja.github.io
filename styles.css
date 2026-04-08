@@ -1731,6 +1731,203 @@ h1 em, h2 em {
 }
 
 /* ============================================================
+   TRIAL MODAL (two-column)
+   ============================================================ */
+
+.trial-modal-card {
+    max-width: 780px;
+    width: 92%;
+    padding: 0;
+    overflow: hidden;
+}
+
+.trial-modal-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.trial-modal-info {
+    padding: 40px 36px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.trial-modal-info h3 {
+    font-size: 24px;
+}
+
+.trial-modal-info h3 em {
+    font-style: italic;
+    color: var(--sage);
+}
+
+.trial-modal-highlight {
+    font-family: var(--font-ui);
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--sage);
+    background: rgba(74, 103, 65, 0.08);
+    border: 1px solid rgba(74, 103, 65, 0.2);
+    border-radius: 8px;
+    padding: 10px 14px;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.trial-modal-perks {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.trial-modal-perks li {
+    font-family: var(--font-ui);
+    font-size: 13px;
+    color: var(--ink);
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    line-height: 1.45;
+}
+
+.trial-check {
+    color: var(--sage);
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+.trial-modal-upgrade {
+    font-family: var(--font-ui);
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 12px;
+    line-height: 1.5;
+}
+
+.trial-modal-form-wrap {
+    padding: 40px 36px;
+    background: var(--parchment);
+    border-left: 1px solid var(--border);
+}
+
+.trial-modal-form-wrap h4 {
+    font-family: var(--font-display);
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 18px;
+}
+
+.trial-modal-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.trial-modal-form label {
+    font-family: var(--font-ui);
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--ink);
+    display: block;
+    margin-bottom: 4px;
+}
+
+.tm-req {
+    color: var(--dusty-rose);
+}
+
+.trial-modal-form input,
+.trial-modal-form select {
+    font-family: var(--font-ui);
+    font-size: 15px;
+    padding: 11px 14px;
+    border: 1.5px solid var(--border);
+    border-radius: 4px;
+    background: #fff;
+    color: var(--ink);
+    outline: none;
+    transition: border-color 0.2s ease;
+    width: 100%;
+}
+
+.trial-modal-form input:focus,
+.trial-modal-form select:focus {
+    border-color: var(--sage);
+}
+
+.trial-modal-form input::placeholder {
+    color: var(--muted);
+}
+
+.trial-modal-form select {
+    appearance: none;
+    background-color: #fff;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%238C7B6E' stroke-width='2' fill='none'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    padding-right: 36px;
+    cursor: pointer;
+}
+
+.trial-modal-submit {
+    width: 100%;
+    margin-top: 4px;
+}
+
+.trial-modal-response {
+    font-family: var(--font-ui);
+    font-size: 14px;
+    text-align: center;
+    margin-top: 4px;
+}
+
+.trial-modal-response.success {
+    color: var(--sage);
+    font-weight: 500;
+}
+
+.trial-modal-response.error {
+    color: var(--dusty-rose);
+}
+
+@media (max-width: 767px) {
+    .trial-modal-card {
+        width: 95%;
+        max-height: 90vh;
+        overflow-y: auto;
+    }
+
+    .trial-modal-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .trial-modal-form-wrap {
+        order: 1;
+        padding: 28px 20px;
+        border-left: none;
+    }
+
+    .trial-modal-info {
+        order: 2;
+        padding: 20px 20px 24px;
+        border-top: 1px solid var(--border);
+    }
+
+    .trial-modal-info h3 {
+        font-size: 20px;
+    }
+
+    .trial-modal-info .modal-body {
+        font-size: 13px;
+        margin-bottom: 14px;
+    }
+}
+
+/* ============================================================
    STICKY MOBILE BOTTOM BAR
    ============================================================ */
 
