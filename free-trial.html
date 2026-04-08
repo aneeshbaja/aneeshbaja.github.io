@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0RGE4P4DVS"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0RGE4P4DVS');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+    <title>Start Free Trial - Campanion</title>
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="logo.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="logo.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="logo.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#2D1B12">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=DM+Sans:wght@300;400;500&family=Lora:ital,wght@0,400;0,500;1,400;1,500&family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Meta Pixel Code -->
+    <script>
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '1920019068626100');
+      fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=1920019068626100&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
+
+    <style>
+        .trial-page {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 120px 24px 80px;
+        }
+
+        .trial-card {
+            background: var(--cream);
+            border: 1.5px solid var(--border);
+            border-radius: 16px;
+            max-width: 880px;
+            width: 100%;
+            box-shadow: var(--shadow-lg);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            overflow: hidden;
+        }
+
+        /* --- Left: Info side --- */
+        .trial-info {
+            padding: 48px 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background: var(--cream);
+        }
+
+        .trial-info h1 {
+            font-family: var(--font-display);
+            font-size: 30px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            line-height: 1.2;
+        }
+
+        .trial-info h1 em {
+            font-style: italic;
+            color: var(--sage);
+        }
+
+        .trial-subtitle {
+            font-family: var(--font-body);
+            font-size: 15px;
+            color: var(--muted);
+            line-height: 1.65;
+            margin-bottom: 24px;
+        }
+
+        .trial-highlight {
+            font-family: var(--font-ui);
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--sage);
+            background: rgba(74, 103, 65, 0.08);
+            border: 1px solid rgba(74, 103, 65, 0.2);
+            border-radius: 8px;
+            padding: 12px 16px;
+            margin-bottom: 24px;
+            line-height: 1.5;
+        }
+
+        .trial-perks h3 {
+            font-family: var(--font-ui);
+            font-size: 12px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--muted);
+            margin-bottom: 12px;
+        }
+
+        .trial-perks ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .trial-perks li {
+            font-family: var(--font-ui);
+            font-size: 14px;
+            color: var(--ink);
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            line-height: 1.45;
+        }
+
+        .trial-perks .check {
+            color: var(--sage);
+            font-weight: 700;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+
+        .trial-perks .upgrade-note {
+            font-family: var(--font-ui);
+            font-size: 13px;
+            color: var(--muted);
+            margin-top: 14px;
+            line-height: 1.5;
+        }
+
+        /* --- Right: Form side --- */
+        .trial-form-wrap {
+            padding: 48px 40px;
+            background: var(--parchment);
+            border-left: 1px solid var(--border);
+        }
+
+        .trial-form-wrap h2 {
+            font-family: var(--font-display);
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .trial-form {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .trial-form label {
+            font-family: var(--font-ui);
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--ink);
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .trial-form label .required {
+            color: var(--dusty-rose);
+        }
+
+        .trial-form input,
+        .trial-form select {
+            font-family: var(--font-ui);
+            font-size: 15px;
+            padding: 12px 14px;
+            border: 1.5px solid var(--border);
+            border-radius: 4px;
+            background: #fff;
+            color: var(--ink);
+            outline: none;
+            transition: border-color 0.2s ease;
+            width: 100%;
+        }
+
+        .trial-form input:focus,
+        .trial-form select:focus {
+            border-color: var(--sage);
+        }
+
+        .trial-form input::placeholder {
+            color: var(--muted);
+        }
+
+        .trial-form select {
+            appearance: none;
+            background-color: #fff;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%238C7B6E' stroke-width='2' fill='none'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 14px center;
+            padding-right: 36px;
+            cursor: pointer;
+        }
+
+        .trial-submit {
+            margin-top: 4px;
+            width: 100%;
+        }
+
+        .trial-form .form-response {
+            font-family: var(--font-ui);
+            font-size: 14px;
+            text-align: center;
+            margin-top: 4px;
+        }
+
+        .trial-form .form-response.success {
+            color: var(--sage);
+            font-weight: 500;
+        }
+
+        .trial-form .form-response.error {
+            color: var(--dusty-rose);
+        }
+
+        .trial-back {
+            margin-top: 24px;
+            text-align: center;
+        }
+
+        .trial-back a {
+            font-family: var(--font-ui);
+            font-size: 14px;
+            color: var(--muted);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .trial-back a:hover {
+            color: var(--ink);
+        }
+
+        /* --- Mobile: stack vertically --- */
+        @media (max-width: 767px) {
+            .trial-page {
+                padding: 90px 12px 48px;
+            }
+
+            .trial-card {
+                grid-template-columns: 1fr;
+            }
+
+            .trial-info {
+                padding: 32px 24px 24px;
+            }
+
+            .trial-info h1 {
+                font-size: 24px;
+            }
+
+            .trial-subtitle {
+                font-size: 14px;
+                margin-bottom: 16px;
+            }
+
+            .trial-highlight {
+                margin-bottom: 16px;
+                padding: 10px 14px;
+                font-size: 13px;
+            }
+
+            .trial-perks li {
+                font-size: 13px;
+            }
+
+            .trial-perks .upgrade-note {
+                font-size: 12px;
+            }
+
+            .trial-form-wrap {
+                padding: 24px;
+                border-left: none;
+                border-top: 1px solid var(--border);
+            }
+
+            .trial-form-wrap h2 {
+                font-size: 19px;
+                margin-bottom: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Noise texture overlay -->
+    <svg class="noise-overlay" aria-hidden="true">
+        <filter id="noiseFilter">
+            <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/>
+        </filter>
+        <rect width="100%" height="100%" filter="url(#noiseFilter)"/>
+    </svg>
+
+    <!-- Navigation -->
+    <header class="nav-bar">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo">
+                <span class="nav-logo-text">Campanion</span>
+            </a>
+            <nav class="nav-links">
+                <a href="index.html#features" class="nav-link">Features</a>
+                <a href="index.html#how-it-works" class="nav-link">For Educators</a>
+                <a href="index.html#pricing" class="nav-link">Pricing</a>
+                <a href="index.html#pricing" class="nav-cta">Get Started</a>
+            </nav>
+            <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        <!-- Mobile menu -->
+        <div class="mobile-menu">
+            <a href="index.html#features" class="mobile-link">Features</a>
+            <a href="index.html#how-it-works" class="mobile-link">For Educators</a>
+            <a href="index.html#pricing" class="mobile-link">Pricing</a>
+            <a href="index.html#pricing" class="mobile-cta">Get Started</a>
+        </div>
+    </header>
+
+    <!-- Free Trial Signup -->
+    <main class="trial-page">
+        <div class="trial-card">
+            <!-- Left: Info -->
+            <div class="trial-info">
+                <h1>Start for Free. <em>No Card Needed.</em></h1>
+                <p class="trial-subtitle">Try Campanion with zero commitment. Get 3 free grading sessions and see how much time you'll save.</p>
+
+                <div class="trial-highlight">
+                    3 free grading sessions &mdash; no credit card upfront.
+                </div>
+
+                <div class="trial-perks">
+                    <h3>What you get</h3>
+                    <ul>
+                        <li><span class="check">&#10003;</span> 3 free grading sessions</li>
+                        <li><span class="check">&#10003;</span> Our team emails you instructions to get started</li>
+                        <li><span class="check">&#10003;</span> No credit card upfront</li>
+                    </ul>
+                    <p class="upgrade-note">Grading profile, unlimited grading, and 24/7 support are available when you upgrade to a paid plan.</p>
+                </div>
+            </div>
+
+            <!-- Right: Form -->
+            <div class="trial-form-wrap">
+                <h2>Get Started</h2>
+                <form class="trial-form" id="trialForm">
+                    <div>
+                        <label for="trial-name">Name <span class="required">*</span></label>
+                        <input type="text" id="trial-name" name="name" required placeholder="Your full name" autocomplete="name">
+                    </div>
+
+                    <div>
+                        <label for="trial-email">Email <span class="required">*</span></label>
+                        <input type="email" id="trial-email" name="email" required placeholder="Your school email" autocomplete="email">
+                    </div>
+
+                    <div>
+                        <label for="trial-subject">What do you teach? <span class="required">*</span></label>
+                        <select id="trial-subject" name="subject" required>
+                            <option value="" disabled selected>Select your subject</option>
+                            <option value="English / Language Arts">English / Language Arts</option>
+                            <option value="Math">Math</option>
+                            <option value="Science">Science</option>
+                            <option value="Social Studies / History">Social Studies / History</option>
+                            <option value="World Languages">World Languages</option>
+                            <option value="Special Education">Special Education</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn btn-sage trial-submit">
+                        <span class="btn-text">Start My Free Trial</span>
+                        <span class="btn-loader" style="display: none;">Sending...</span>
+                    </button>
+
+                    <div id="formResponse" class="form-response"></div>
+                </form>
+            </div>
+        </div>
+
+        <div class="trial-back">
+            <a href="index.html">&larr; Back to Campanion</a>
+        </div>
+    </main>
+
+    <script src="main.js"></script>
+    <script src="free-trial.js"></script>
+</body>
+</html>
