@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0RGE4P4DVS"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0RGE4P4DVS');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+    <title>Campanion for CMS</title>
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="logo.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="logo.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="logo.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#2D1B12">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=DM+Sans:wght@300;400;500&family=Lora:ital,wght@0,400;0,500;1,400;1,500&family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        .cms-page {
+            min-height: calc(100vh - 80px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 110px 24px 60px;
+            text-align: center;
+        }
+
+        .cms-inner {
+            max-width: 720px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 28px;
+        }
+
+        .cms-headline {
+            font-family: var(--font-display);
+            font-size: clamp(28px, 4.2vw, 44px);
+            font-weight: 700;
+            line-height: 1.15;
+            color: var(--ink);
+            margin: 0;
+        }
+
+        .cms-headline em {
+            font-style: italic;
+            color: var(--sage);
+        }
+
+        .cms-tagline {
+            font-family: var(--font-body);
+            font-size: clamp(16px, 1.8vw, 18px);
+            color: var(--muted);
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        /* --- Price: the focus --- */
+        .cms-price-card {
+            background: var(--cream);
+            border: 1.5px solid var(--border);
+            border-radius: 16px;
+            padding: 40px 48px;
+            box-shadow: var(--shadow-lg);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            width: 100%;
+            max-width: 520px;
+        }
+
+        .cms-price {
+            display: flex;
+            align-items: baseline;
+            justify-content: center;
+            gap: 4px;
+            font-family: var(--font-display);
+            color: var(--ink);
+            line-height: 1;
+        }
+
+        .cms-price-currency {
+            font-size: clamp(32px, 4vw, 44px);
+            font-weight: 700;
+            color: var(--sage);
+        }
+
+        .cms-price-amount {
+            font-size: clamp(72px, 10vw, 104px);
+            font-weight: 900;
+            color: var(--sage);
+            letter-spacing: -0.02em;
+        }
+
+        .cms-price-term {
+            font-family: var(--font-ui);
+            font-size: 14px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--muted);
+            margin: 0;
+        }
+
+        .cms-price-detail {
+            font-family: var(--font-body);
+            font-size: 17px;
+            color: var(--ink);
+            line-height: 1.45;
+            margin: 0;
+        }
+
+        .cms-cta {
+            font-size: 18px;
+            padding: 18px 48px;
+            width: 100%;
+            max-width: 360px;
+        }
+
+        /* --- Video: de-emphasized, secondary --- */
+        .cms-video {
+            width: 100%;
+            max-width: 580px;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            background: var(--cream);
+            aspect-ratio: 16 / 9;
+            opacity: 0.85;
+            margin-top: 8px;
+        }
+
+        .cms-video video {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover;
+        }
+
+        .cms-video-label {
+            font-family: var(--font-ui);
+            font-size: 12px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--muted);
+            margin: 0 0 -12px 0;
+        }
+
+        @media (max-width: 767px) {
+            .cms-page {
+                padding: 90px 16px 40px;
+            }
+
+            .cms-inner {
+                gap: 22px;
+            }
+
+            .cms-price-card {
+                padding: 28px 24px;
+            }
+
+            .cms-video {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Noise texture overlay -->
+    <svg class="noise-overlay" aria-hidden="true">
+        <filter id="noiseFilter">
+            <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/>
+        </filter>
+        <rect width="100%" height="100%" filter="url(#noiseFilter)"/>
+    </svg>
+
+    <!-- Navigation -->
+    <header class="nav-bar">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo">
+                <span class="nav-logo-text">Campanion</span>
+            </a>
+            <nav class="nav-links">
+                <a href="index.html#features" class="nav-link">Features</a>
+                <a href="index.html#how-it-works" class="nav-link">For Educators</a>
+                <a href="index.html#pricing" class="nav-link">Pricing</a>
+                <a href="https://buy.stripe.com/dRm14fbHD4it94W6s348007" target="_blank" rel="noopener noreferrer" class="nav-cta">Get Campanion</a>
+            </nav>
+            <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        <!-- Mobile menu -->
+        <div class="mobile-menu">
+            <a href="index.html#features" class="mobile-link">Features</a>
+            <a href="index.html#how-it-works" class="mobile-link">For Educators</a>
+            <a href="index.html#pricing" class="mobile-link">Pricing</a>
+            <a href="https://buy.stripe.com/dRm14fbHD4it94W6s348007" target="_blank" rel="noopener noreferrer" class="mobile-cta">Get Campanion</a>
+        </div>
+    </header>
+
+    <main class="cms-page">
+        <div class="cms-inner">
+            <h1 class="cms-headline">Grade your next stack of assignments in <em>under 30 minutes.</em></h1>
+            <p class="cms-tagline">Campanion for the rest of the school year.</p>
+
+            <div class="cms-price-card">
+                <div class="cms-price">
+                    <span class="cms-price-currency">$</span><span class="cms-price-amount">4.99</span>
+                </div>
+                <p class="cms-price-term">One time &middot; Rest of school year</p>
+                <a href="https://buy.stripe.com/dRm14fbHD4it94W6s348007" target="_blank" rel="noopener noreferrer" class="btn btn-sage cms-cta">Get Campanion</a>
+            </div>
+
+            <p class="cms-video-label">Quick refresher</p>
+            <div class="cms-video">
+                <video autoplay loop muted playsinline disablePictureInPicture>
+                    <source src="demo vid test.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+    </main>
+
+    <script src="main.js"></script>
+</body>
+</html>
