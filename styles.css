@@ -1359,18 +1359,6 @@ h1 em, h2 em {
     text-decoration: underline;
 }
 
-.footer-link {
-    font-family: var(--font-ui);
-    font-size: 13px;
-    color: rgba(251,247,239,0.55);
-    text-decoration: none;
-    transition: color 0.2s ease;
-}
-
-.footer-link:hover {
-    color: var(--amber-light);
-}
-
 /* ============================================================
    ANIMATIONS
    ============================================================ */
