@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0RGE4P4DVS"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0RGE4P4DVS');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+    <title>Privacy Notice - Campanion</title>
+    <meta name="description" content="Campanion Inc. Privacy Notice for Campanion Grader (K-12) and InteGrade by Campanion (higher education).">
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/logo.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/logo.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/logo.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#2D1B12">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=DM+Sans:wght@300;400;500&family=Lora:ital,wght@0,400;0,500;1,400;1,500&family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/styles.css">
+
+    <style>
+        .privacy-page {
+            min-height: 100vh;
+            padding: 120px 24px 80px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .privacy-card {
+            background: var(--cream);
+            border: 1.5px solid var(--border);
+            border-radius: 16px;
+            max-width: 820px;
+            width: 100%;
+            box-shadow: var(--shadow-lg);
+            padding: 56px 64px;
+        }
+
+        .privacy-header {
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 28px;
+            margin-bottom: 36px;
+        }
+
+        .privacy-eyebrow {
+            font-family: var(--font-ui);
+            font-size: 12px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--sage);
+            margin-bottom: 14px;
+        }
+
+        .privacy-card h1 {
+            font-family: var(--font-display);
+            font-size: 40px;
+            font-weight: 700;
+            line-height: 1.15;
+            color: var(--ink);
+            margin-bottom: 16px;
+        }
+
+        .privacy-meta {
+            font-family: var(--font-ui);
+            font-size: 14px;
+            color: var(--muted);
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px 18px;
+        }
+
+        .privacy-meta strong {
+            color: var(--ink);
+            font-weight: 500;
+        }
+
+        .privacy-intro {
+            font-family: var(--font-body);
+            font-size: 17px;
+            line-height: 1.75;
+            color: var(--ink);
+            margin-bottom: 8px;
+        }
+
+        .privacy-intro + .privacy-intro {
+            margin-top: 14px;
+        }
+
+        .privacy-section {
+            margin-top: 44px;
+        }
+
+        .privacy-section h2 {
+            font-family: var(--font-display);
+            font-size: 24px;
+            font-weight: 700;
+            line-height: 1.25;
+            color: var(--ink);
+            margin-bottom: 16px;
+            display: flex;
+            align-items: baseline;
+            gap: 14px;
+        }
+
+        .privacy-section h2 .num {
+            font-family: var(--font-ui);
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--sage);
+            letter-spacing: 0.08em;
+            min-width: 36px;
+        }
+
+        .privacy-section h3 {
+            font-family: var(--font-ui);
+            font-size: 14px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--walnut);
+            margin-top: 22px;
+            margin-bottom: 10px;
+        }
+
+        .privacy-section p {
+            font-family: var(--font-body);
+            font-size: 16px;
+            line-height: 1.75;
+            color: var(--ink);
+            margin-bottom: 14px;
+        }
+
+        .privacy-section p:last-child {
+            margin-bottom: 0;
+        }
+
+        .privacy-section ul {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 18px 0;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .privacy-section ul li {
+            font-family: var(--font-body);
+            font-size: 16px;
+            line-height: 1.65;
+            color: var(--ink);
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .privacy-section ul li::before {
+            content: "";
+            position: absolute;
+            left: 4px;
+            top: 11px;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--sage);
+        }
+
+        .privacy-section a {
+            color: var(--sage);
+            text-decoration: underline;
+            text-decoration-thickness: 1px;
+            text-underline-offset: 3px;
+        }
+
+        .privacy-section a:hover {
+            color: var(--walnut);
+        }
+
+        .privacy-section em {
+            font-style: italic;
+        }
+
+        .privacy-section strong {
+            font-weight: 600;
+            color: var(--ink);
+        }
+
+        .privacy-callout {
+            background: rgba(74, 103, 65, 0.06);
+            border-left: 3px solid var(--sage);
+            border-radius: 0 8px 8px 0;
+            padding: 16px 20px;
+            margin: 18px 0;
+        }
+
+        .privacy-callout p {
+            font-size: 15px;
+            margin-bottom: 0;
+        }
+
+        .privacy-contact {
+            margin-top: 8px;
+            font-family: var(--font-body);
+            font-size: 16px;
+            line-height: 1.75;
+        }
+
+        .privacy-contact .addr {
+            font-style: normal;
+            display: block;
+            margin-bottom: 12px;
+        }
+
+        .privacy-footer-note {
+            margin-top: 56px;
+            padding-top: 24px;
+            border-top: 1px solid var(--border);
+            font-family: var(--font-ui);
+            font-size: 13px;
+            color: var(--muted);
+            text-align: center;
+        }
+
+        .privacy-back {
+            margin-top: 32px;
+            text-align: center;
+        }
+
+        .privacy-back a {
+            font-family: var(--font-ui);
+            font-size: 14px;
+            color: var(--muted);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .privacy-back a:hover {
+            color: var(--ink);
+        }
+
+        @media (max-width: 767px) {
+            .privacy-page {
+                padding: 90px 12px 48px;
+            }
+
+            .privacy-card {
+                padding: 32px 22px;
+                border-radius: 12px;
+            }
+
+            .privacy-card h1 {
+                font-size: 30px;
+            }
+
+            .privacy-section {
+                margin-top: 36px;
+            }
+
+            .privacy-section h2 {
+                font-size: 21px;
+                gap: 10px;
+            }
+
+            .privacy-section h2 .num {
+                min-width: 28px;
+                font-size: 12px;
+            }
+
+            .privacy-section p,
+            .privacy-section ul li {
+                font-size: 15.5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Noise texture overlay -->
+    <svg class="noise-overlay" aria-hidden="true">
+        <filter id="noiseFilter">
+            <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/>
+        </filter>
+        <rect width="100%" height="100%" filter="url(#noiseFilter)"/>
+    </svg>
+
+    <!-- Navigation -->
+    <header class="nav-bar">
+        <div class="nav-inner">
+            <a href="/" class="nav-logo">
+                <span class="nav-logo-text">Campanion</span>
+            </a>
+            <nav class="nav-links">
+                <a href="/#features" class="nav-link">Features</a>
+                <a href="/#how-it-works" class="nav-link">For Educators</a>
+                <a href="/#pricing" class="nav-link">Pricing</a>
+                <a href="/#pricing" class="nav-cta">Get Started</a>
+            </nav>
+            <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        <!-- Mobile menu -->
+        <div class="mobile-menu">
+            <a href="/#features" class="mobile-link">Features</a>
+            <a href="/#how-it-works" class="mobile-link">For Educators</a>
+            <a href="/#pricing" class="mobile-link">Pricing</a>
+            <a href="/#pricing" class="mobile-cta">Get Started</a>
+        </div>
+    </header>
+
+    <main class="privacy-page">
+        <article class="privacy-card">
+            <header class="privacy-header">
+                <div class="privacy-eyebrow">Legal</div>
+                <h1>Privacy Notice</h1>
+                <div class="privacy-meta">
+                    <span><strong>Campanion Inc.</strong></span>
+                    <span>Effective date: <strong>May 4, 2026</strong></span>
+                </div>
+            </header>
+
+            <p class="privacy-intro">This Privacy Notice describes how Campanion Inc. ("Campanion," "we," "us," or "our") collects, uses, retains, and protects information in connection with our products: Campanion Grader for K-12 educators and InteGrade by Campanion for higher education. Both products are operated by Campanion Inc. under this single Privacy Notice.</p>
+
+            <p class="privacy-intro">We've written this notice in plain English. Where the two products handle data differently, we've called that out.</p>
+
+            <section class="privacy-section" id="who-we-are">
+                <h2><span class="num">01</span> Who We Are</h2>
+                <p>Campanion Inc. is a US-based company headquartered at 1032 East Brandon Blvd., Brandon, FL 33511. We build grading-workflow tools for educators.</p>
+                <p>For privacy questions, deletion requests, or breach inquiries, contact us at <a href="mailto:founders@campanion.org">founders@campanion.org</a>.</p>
+            </section>
+
+            <section class="privacy-section" id="products">
+                <h2><span class="num">02</span> What Our Products Do</h2>
+                <p><strong>Campanion Grader</strong> is a grading-assistance tool for K-12 teachers. Teachers upload student work and the platform helps with feedback and scoring. Students do not have accounts on Campanion Grader; the product is teacher-only.</p>
+                <p><strong>InteGrade by Campanion</strong> is a grading platform for higher education, built as an extension of Campanion's grading workflow optimized for community colleges. Instructors use it to grade student submissions and provide feedback. The product integrates with the institution's learning management system. Students may submit work directly through the platform and review feedback that the instructor has chosen to release.</p>
+            </section>
+
+            <section class="privacy-section" id="information-we-collect">
+                <h2><span class="num">03</span> What Information We Collect</h2>
+                <p>We collect only the data needed to deliver the contracted grading service. We do not collect demographic information (race, ethnicity, gender, age, etc.), genetic or biometric data, location data, or any sensitive special-category data.</p>
+
+                <h3>From instructors and teachers</h3>
+                <ul>
+                    <li>Name, email address, institutional affiliation</li>
+                    <li>Authentication and login records</li>
+                    <li>Activity within the platform</li>
+                </ul>
+
+                <h3>From institutional roster sync (InteGrade only)</h3>
+                <ul>
+                    <li>Student names</li>
+                    <li>Student email addresses</li>
+                    <li>Institutional student identifiers</li>
+                </ul>
+
+                <h3>From students (InteGrade only)</h3>
+                <ul>
+                    <li>Submission content uploaded for grading</li>
+                    <li>Acknowledgment of this Privacy Notice on first launch</li>
+                    <li>Audit log entries (timestamps, IP addresses, action types) for security purposes</li>
+                </ul>
+
+                <h3>From teachers' grading work (both products)</h3>
+                <ul>
+                    <li>Rubric content</li>
+                    <li>Grading results, feedback, and scores</li>
+                </ul>
+
+                <h3>Browser and technical data (both products)</h3>
+                <ul>
+                    <li>IP addresses (for security and audit purposes)</li>
+                    <li>Standard authentication session tokens</li>
+                </ul>
+
+                <div class="privacy-callout">
+                    <p>We do not use third-party advertising trackers, analytics scripts, marketing pixels, or behavioral profiling tools.</p>
+                </div>
+            </section>
+
+            <section class="privacy-section" id="why-we-collect">
+                <h2><span class="num">04</span> Why We Collect It</h2>
+                <p>We collect personal information only for the following purposes:</p>
+                <ul>
+                    <li>To deliver the contracted grading service</li>
+                    <li>To send assignment-related notifications (submission confirmations, due-date reminders, feedback announcements) — for InteGrade, these are dispatched through the institution's learning management system</li>
+                    <li>To maintain audit logs for security, compliance, and FERPA requirements</li>
+                    <li>To respond to support requests and account-related inquiries</li>
+                </ul>
+                <p>We do not use personal information for marketing, advertising, behavioral profiling beyond the grading context, or sale to third parties. We have never sold personal information and we will not.</p>
+            </section>
+
+            <section class="privacy-section" id="ferpa">
+                <h2><span class="num">05</span> Legal Basis and FERPA</h2>
+                <p>Educational records processed through our products are protected under the Family Educational Rights and Privacy Act (FERPA). Campanion Inc. operates as a "school official" under the FERPA exception when handling these records on behalf of the institution. Our processing is governed by the institutional contract; institutions retain control over the data and over data subject rights for educational records.</p>
+                <p>For students residing in US states with active consumer privacy laws, educational records are governed primarily by FERPA, which preempts most state consumer privacy law where the two overlap. We comply with applicable state-specific provisions where they extend beyond FERPA.</p>
+            </section>
+
+            <section class="privacy-section" id="sharing">
+                <h2><span class="num">06</span> Who We Share It With</h2>
+                <p>We share personal information only with the following categories of recipients:</p>
+                <p><strong>Service providers</strong> that help us operate the platform — including cloud hosting, database, authentication, and AI inference providers. All service providers are bound by contractual data-processing terms requiring them to handle data only for the purposes of providing services to us, with security standards equivalent to or stronger than our own. Our AI service provider is contractually prohibited from using customer data to train AI models.</p>
+                <p>A current list of service providers is available to institutional customers on request.</p>
+                <p><strong>Institutions:</strong> We share data with the institutional customer that contracted for the service (the school district or college) as required to fulfill the contract.</p>
+                <p><strong>Legal requirements:</strong> We may disclose personal information when required by valid legal process. Where permitted by law, we will notify the affected institution before disclosure.</p>
+                <div class="privacy-callout">
+                    <p>We do not sell personal information, share it with advertisers or data brokers, transfer it outside the United States, or grant access to any third-party AI service that uses customer data for training.</p>
+                </div>
+            </section>
+
+            <section class="privacy-section" id="retention">
+                <h2><span class="num">07</span> How Long We Keep It</h2>
+                <p><strong>For InteGrade by Campanion:</strong> Submission and grading data is retained for the duration of the academic term plus 45 days, then automatically deleted unless the instructor or institution explicitly extends the retention period. Earlier deletion is available on instructor or institutional request, with deletion completed within 30 days. Backup snapshots may persist briefly past this window per our cloud provider's documented backup retention timelines and are overwritten on the standard schedule.</p>
+                <p><strong>For Campanion Grader:</strong> Original student work files remain on the teacher's device only and are auto-cleaned after 30 days. Records are deleted on teacher or institutional request within 30 days.</p>
+                <p><strong>Audit logs and security records (both products):</strong> Retained for up to 90 days online and up to 1 year in archival storage to support security investigations and compliance requirements.</p>
+                <p><strong>Personnel data:</strong> Instructor and teacher account records are retained while the account is active and for a reasonable period after closure to handle any final inquiries, then deleted.</p>
+            </section>
+
+            <section class="privacy-section" id="security">
+                <h2><span class="num">08</span> How We Protect It</h2>
+                <p>We implement multiple layers of technical and organizational security:</p>
+
+                <h3>Encryption</h3>
+                <p>Data in transit is encrypted using current industry-standard transport security (TLS 1.2 or 1.3 with FIPS 140-2 validated cryptography). Data at rest is encrypted with AES-256. For InteGrade, identifying student fields are additionally protected by application-level encryption with cryptographic key separation, meaning that even Campanion personnel with database access cannot read these fields directly.</p>
+
+                <h3>Access controls</h3>
+                <p>Per-tenant data isolation is enforced at the database layer. Each instructor accesses only their own courses; for InteGrade, each student accesses only their own submissions and only feedback explicitly released by the instructor.</p>
+
+                <h3>Personnel access</h3>
+                <p>Campanion personnel do not access institutional or student data in the normal course of operations. Production data access requires explicit, audited authorization, with multi-factor authentication enforced on all administrative consoles.</p>
+
+                <h3>Data minimization</h3>
+                <p>We collect only what's necessary for the grading workflow. Across both products, no student personally identifiable information is transmitted to or processed by any AI service — submission content is de-identified before any AI processing.</p>
+
+                <h3>Audit logging</h3>
+                <p>Authentication events, data access, mutations, and exports are logged to tamper-resistant audit storage.</p>
+
+                <p>While no system can guarantee perfect security, these controls reflect industry best practices for educational data protection. We are actively pursuing SOC 2 Type 2 certification.</p>
+            </section>
+
+            <section class="privacy-section" id="rights">
+                <h2><span class="num">09</span> Your Rights</h2>
+
+                <h3>For students using InteGrade by Campanion</h3>
+                <ul>
+                    <li>You can review your own submissions and instructor-released feedback within the application at any time.</li>
+                    <li>You can request a machine-readable export of your record on demand.</li>
+                    <li>Correction and deletion requests for educational records are routed through your institution per FERPA. Your institution will determine how to address the request and may direct us to act accordingly.</li>
+                    <li>Instructors may revoke previously released feedback at any time; in that case the content will no longer be visible to you in the application, though the underlying record is preserved through the academic term and applicable retention period for institutional audit and FERPA review.</li>
+                </ul>
+
+                <h3>For instructors and teachers</h3>
+                <ul>
+                    <li>You can access and update your account information through the application.</li>
+                    <li>You can request deletion of your account and its associated data.</li>
+                    <li>For data you've collected from students through the platform, deletion and correction requests should be coordinated with your institution per FERPA and your institutional contract.</li>
+                </ul>
+
+                <h3>For institutions</h3>
+                <ul>
+                    <li>You retain ownership of all data, inputs, outputs, and metadata processed through the service.</li>
+                    <li>You can request a full or partial export of your institutional data at any time during the contract.</li>
+                    <li>At contract completion, your data is available for export for 90 days, after which it is permanently deleted within the timelines described in Section 7.</li>
+                </ul>
+
+                <p>To exercise any of these rights, contact us at <a href="mailto:founders@campanion.org">founders@campanion.org</a>. We respond to verified requests within 30 days.</p>
+            </section>
+
+            <section class="privacy-section" id="coppa">
+                <h2><span class="num">10</span> Children Under 13 (COPPA)</h2>
+                <p><strong>Campanion Grader (K-12)</strong> may be used by teachers in classrooms that include children under 13. In those cases, the teacher uploads student work on the student's behalf; we operate under the school's authorization to collect this data for educational purposes (the "school authorization" basis under COPPA). Students do not have accounts on Campanion Grader and do not interact with the platform directly. If a parent or guardian believes we have collected information from a child in a manner inconsistent with COPPA, contact us at <a href="mailto:founders@campanion.org">founders@campanion.org</a> and we will investigate and delete as appropriate.</p>
+                <p><strong>InteGrade by Campanion (higher education)</strong> is intended for college and university students who are typically 18 years of age or older. We do not knowingly collect data from children under 13 through InteGrade. If you believe we have, contact us and we will delete.</p>
+            </section>
+
+            <section class="privacy-section" id="notifications">
+                <h2><span class="num">11</span> Notifications and Communications</h2>
+                <p><strong>For InteGrade by Campanion:</strong> Student notifications are dispatched through the institution's learning management system, which honors each student's existing notification preferences. We do not operate independent email infrastructure for student communications and do not store student email addresses for messaging purposes.</p>
+                <p><strong>For instructors and teachers (both products):</strong> We send service-related communications (account, security, billing, material product changes) to the email address associated with the account. We do not send marketing email.</p>
+            </section>
+
+            <section class="privacy-section" id="international">
+                <h2><span class="num">12</span> International Users</h2>
+                <p>Both products are operated for users in the United States. All data processing and storage occurs within the United States. We do not currently target users in the European Economic Area, the United Kingdom, or other jurisdictions with comprehensive cross-border data transfer regimes. If your institution has needs related to international students or cross-border data transfer, contact us and we will discuss appropriate contractual safeguards on a case-by-case basis.</p>
+            </section>
+
+            <section class="privacy-section" id="ai-processing">
+                <h2><span class="num">13</span> AI Processing</h2>
+                <p>Across both products, no student personally identifiable information (PII) is ever transmitted to or processed by any AI service. Submission content passes through a personally-identifying-information removal layer before any data is sent to an AI service for analysis. Student names, email addresses, institutional identifiers, and other identifying information are stripped from the content prior to AI processing. The AI service receives only the de-identified academic content of the work.</p>
+
+                <p><strong>InteGrade by Campanion</strong> includes an optional, instructor-toggleable AI assistance feature. This feature is off by default and may be enabled by an instructor on a per-assignment basis. Institutions may also disable the feature entirely.</p>
+
+                <p>When enabled:</p>
+                <ul>
+                    <li>Submission content is de-identified before any data is transmitted to the AI service, as described above.</li>
+                    <li>Our AI service provider is contractually prohibited from using customer data to train AI models.</li>
+                    <li>AI output is visible to the instructor only.</li>
+                    <li>Students never see raw AI output. All student-visible feedback is gated by an explicit instructor release control: nothing reaches a student until the instructor confirms and releases it. Instructors can revoke previously released content at any time.</li>
+                    <li>Every AI invocation is logged for audit purposes.</li>
+                </ul>
+
+                <p>The AI feature does not make autonomous grading decisions and does not use customer data to train any model.</p>
+
+                <p><strong>Campanion Grader</strong> uses the same de-identification layer before any AI processing. No student PII is transmitted to or processed by any AI service. Our AI service provider is contractually prohibited from training on customer data.</p>
+            </section>
+
+            <section class="privacy-section" id="changes">
+                <h2><span class="num">14</span> Changes to This Notice</h2>
+                <p>We will post material changes to this notice with an updated effective date. For institutional customers, we will provide at least 14 days advance notice of material changes to data handling practices via the institutional contact on file.</p>
+            </section>
+
+            <section class="privacy-section" id="contact">
+                <h2><span class="num">15</span> Contact</h2>
+                <address class="privacy-contact">
+                    <span class="addr">
+                        <strong>Campanion Inc.</strong><br>
+                        1032 East Brandon Blvd.<br>
+                        Brandon, FL 33511<br>
+                        United States
+                    </span>
+                    Privacy questions, data subject rights requests, and breach inquiries:<br>
+                    <a href="mailto:founders@campanion.org">founders@campanion.org</a>
+                </address>
+                <p>We typically respond within 5 business days; verified data subject rights requests are addressed within 30 days.</p>
+            </section>
+
+            <div class="privacy-footer-note">
+                This Privacy Notice was last updated on May 4, 2026.
+            </div>
+        </article>
+    </main>
+
+    <div class="privacy-back">
+        <a href="/">&larr; Back to Campanion</a>
+    </div>
+
+    <script src="/main.js"></script>
+</body>
+</html>
